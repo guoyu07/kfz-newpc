@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运营后台</title>
+    <!-- build:head-css -->
+    <!-- endbuild -->
+</head>
+<body>
+<script>
+    // 主模块ID
+    var moduleId = <?=$parentId?>;
+    //站点配置
+    var site = <?= json_encode($site)?>;
+</script>
+<div id="wrapper">
+    <!-- Navigation -->
+    <?php include APP_PATH . '/application/modules/Admin/views/common/nav.phtml'?>
+
+</div>
+<div id="page-wrapper">
+    <div class="sub-nav">
+        <label>位置：</label>
+        <span>新书－模块设置</span>
+        <a class="sub-nav-line" href="/#moduleId_<?=$parentId?>" target="_blank">去看看线上样式</a>
+        <a class="sub-nav-show btn btn-primary" href="">预览</a>
+    </div>
+    <div class="periodical-box">
+        <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px;">
+            <li role="presentation"><a href="/admin/index/xinshuIndex">URL池子</a></li>
+            <li role="presentation"><a href="/admin/index/xinshuIsbn">ISBN池子</a></li>
+            <li role="presentation"><a href="/admin/index/xinshuRpond">右侧ISBN池子</a></li>
+            <li role="presentation" class="active"><a href="javascript:;">模块设置</a></li>
+        </ul>
+
+        <ul class="nav nav-pills nav-justified" id="navPill-tab" role="tablist">
+            <li role="presentation"><a href="#tab=0">标题</a></li>
+            <li role="presentation"><a href="#tab=1">报警邮件接收</a></li>
+            <li role="presentation"><a href="#tab=2">报警短信接收</a></li>
+            <li role="presentation"><a href="#tab=3">数据日报接收</a></li>
+        </ul>
+
+        <ul class="tab-box">
+            <li id="titlePanel">
+                <table id="table-module-title" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+            </li>
+            <li id="mailPanel">
+                报警邮件接收
+            </li>
+            <li id="smsPanel">
+                报警短信接收
+            </li>
+            <li id="dailyPanel">
+                数据日报接收
+            </li>
+        </ul>
+    </div>
+</div>
+<!--修改标题-->
+<div id="win-title-module" class="easyui-window" title="修改标题" data-options="modal:true,shadow:false,collapsible:false,minimizable:false,maximizable:false,resizable:false" style="display:none;width:700px;" closed="true">
+    <form id="form-title-module" class="form-horizontal">    
+        <div class="item-box clearfix">
+            <div class="text-box">标题：</div>
+            <div class="input-box" style="width:300px;">
+                <input type="text" class="form-control" id="titleText" name="titleText" placeholder="请输入标题">
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">更多url：</div>
+            <div class="input-box" style="width:300px;">
+                <input type="text" class="form-control" id="moreUrl" name="moreUrl" placeholder="请输入更多url">
+            </div>
+        </div>
+        <div class="buttons clearfix" style="width: 200px;">
+            <input type="submit" class="btn btn-default pull-left" value="保存">
+            <div class="btn btn-default pull-right" style="margin-left: 20px;" onclick="app.moduleTitleFn.closeWin()">放弃</div>
+        </div>
+    </form>
+</div>   
+<!-- build:footer-js -->
+<!-- endbuild -->
+</body>
+</html>

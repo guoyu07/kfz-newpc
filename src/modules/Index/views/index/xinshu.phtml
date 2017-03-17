@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>【孔夫子网上书店】一家专业的旧书交易平台：网上书店_古旧书_二手书_古籍善本_小人书_特价书_收藏品交易_图书网购</title>
+        <meta name="description" content="孔夫子网上书店：汇集了全国7124家网上书店，展示多达43281025种图书书籍，包含大量极具收藏价值的古旧珍本（明清、民国古籍善本、小人书、珍本期刊、名人墨迹、民国珍本、绝版书等）。孔夫子旧书网为广大书友提供二手图书买卖与收藏品交易市场；开网上书店、二手书交易、网上买书卖书，首选孔夫子旧书网。">
+        <meta name="keywords" content="孔夫子旧书网,网上书店,古旧书,旧书,旧书网,旧书网站,收藏品,古籍善本,旧书店,收藏品,收藏品交易,图书,书籍,杂志,图书网购,小人书,特价书">
+        <!-- build:head-css -->
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--顶部通栏开始-->
+        <?= \kongfz\Widgets::singleton()->widget('nav', 'top') ?>
+        <!--顶部通栏结束-->
+        <!--头部开始-->
+        <?= \kongfz\Widgets::singleton()->widget('header', 'main') ?>
+        <!--头部结束-->
+        <!--banner开始-->
+        <?= \kongfz\Widgets::singleton()->widget('banner', 'full', ['pos' => 'xinshu']) ?>
+        <!--banner结束-->
+        <div class="content clearfix">
+             <!--左侧栏开始-->
+            <div class="content-left pull-left">               
+                <?= \kongfz\Widgets::singleton()->widget('nav', 'xinshuleftbar') ?>               
+            </div>
+             <!--左侧栏结束-->
+             <!--右侧栏开始-->
+            <div class="content-right">
+                <!--广告开始-->
+                <?= \kongfz\Widgets::singleton()->widget('banner', 'banner_1pic', ['pos' => 'xinshu']) ?>
+                <!--广告结束-->
+                <div class="height50"></div>
+                <!--近期出版开始-->               
+                <?= \kongfz\Widgets::singleton()->widget('floor', 'xinshu_jinqichuban') ?>
+                <!--近期出版结束-->
+                 <div class="height35"></div>
+                 <!--新书热卖榜开始-->
+                <?= \kongfz\Widgets::singleton()->widget('floor', 'xinshu_hotsale') ?>
+                <!--新书热卖榜结束-->
+                <div class="height35"></div>
+                 <!--低价促销开始-->                
+                <?= \kongfz\Widgets::singleton()->widget('floor', 'xinshu_dijiacuxiao') ?>
+                <!--低价促销结束-->
+                <!---三栏广告开始-->               
+                <?= \kongfz\Widgets::singleton()->widget('floor', 'xinshu_banner') ?>                
+                <!---三栏广告结束-->
+                <div class="height35"></div>
+                <!--特色精品推荐开始-->              
+                <?= \kongfz\Widgets::singleton()->widget('floor', 'xinshu_tesejingpin') ?>
+                <!--特色精品推荐结束-->
+            </div>
+            <!--右侧栏结束-->
+        </div>
+        
+
+        <!--底部开始-->
+        <?= \kongfz\Widgets::singleton()->widget('footer', 'footer_simple') ?>
+        <!--底部结束-->
+
+        <!-- build:footer-js -->
+        <!-- endbuild -->
+    </body>
+</html>

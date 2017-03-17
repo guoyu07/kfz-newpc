@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+
+$l1=[1,2, 3];
+$l2 = [4,5, 6];
+$l3=array_merge($l1, $l2);
+print_r($l3);

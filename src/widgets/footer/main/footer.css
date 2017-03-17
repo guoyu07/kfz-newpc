@@ -1,0 +1,18 @@
+/*
+* @Author: zhaoxuan
+* @Date:   2016-12-19
+* @Last Modified by:   zhaoxuan
+* @Last Modified time: 2016-12-19
+*/
+
+/*当屏幕的宽度小于1200px的时候采用下面的样式进行显示设定版心的宽度并且居中*/
+
+/*底部footer*/
+.foot{ color:#999; line-height:20px;}
+.footer_box{ border-top:1px solid #e5e5e5; background:#fafafa; zoom:1; padding:73px 0 72px 0;}
+.foot .footer_link a{ margin:0 17px; color:#8999a9;}
+
+/*当屏幕的宽度大于1200px的时候采用下面的样式进行显示*/
+@media screen and (min-width: 1200px) {
+
+}

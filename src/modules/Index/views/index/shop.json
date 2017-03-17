@@ -1,0 +1,13 @@
+{
+    "name": "index/shop",
+    "module": "index",
+    "type": "page",
+    "description": "孔夫子旧书网书店首页",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["nav/top","banner/full","nav/shopleftbar", "header/main","banner/banner_1pic","floor/shop_jueban","floor/shop_lowprice", "floor/shop_shoplist", "floor/shop_tesetuijian","footer/footer_simple"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}

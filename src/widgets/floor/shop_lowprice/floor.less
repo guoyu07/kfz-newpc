@@ -1,0 +1,55 @@
+/*引入公共变量*/
+@import "src/less/variables.less";
+@tit-border:  #ccc;
+@h3-font-size:  24px;
+@tit-lineheigh: 48px;
+@img-border:    #e5e5e5;
+@booklist-font-size: 12px;
+@booklist-lineheigh: 20px;
+@book-list-a-color: #333;
+@book-list-a-hover-color: #8c222c;
+@book-list-shopname:#8999a9;
+@book-list-price:#bf7f5f;
+@look-more-a:#0057a0;
+@look-more-a-hover:#8c222c;
+
+.shop_booklist_lowprice{
+        .m_t25{ margin-top: 25px;}
+       h3{ font-size:@h3-font-size; }
+       .booklist_tit{ border-bottom: 1px solid @tit-border;  line-height:@tit-lineheigh; }
+       .more_list{ line-height: 18px; margin-top: 18px;}
+       .more_list a{color:@font-color-default;  position: relative; margin-left: 23px;}
+       .more_list a.now{ color: @font-color-important;}
+       .more_list a.now span.jt_up2{ display: block;}
+       .more_list a.two_words .jt_up2{left: 18%;}
+
+       .book_list {width:  790px;}
+       .book_list ul{ margin-right: -35px;}
+       .book_list li{ float: left; width:130px; margin-right: 35px; margin-bottom: 37px; line-height:@booklist-lineheigh; word-break:break-all; }
+       .book_list li .pic a{ display: block;width:128px; height: 128px; border: 1px solid @img-border; text-align: center;}
+       .book_list li .pic a img{ max-width: 128px;max-height: 128px;}
+       .book_list li .book_name{ font-size:@booklist-font-size; height: 40px; overflow: hidden; margin-top: 5px; }
+       .book_list li .book_name a{ color: @book-list-a-color;}
+       .book_list li .book_name a:hover{ color: @book-list-a-hover-color;}
+       .book_list li .shop_name{ color:@book-list-shopname; height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+       .book_list li .price{ color: @book-list-price; font-size:16px; margin-top: 5px; height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+       .look_more a{ color: @look-more-a;}
+       .look_more a:hover{ color: @look-more-a-hover;}
+        //图标
+      .jt_up2{ display: none; position: absolute; bottom: -13px; left: 33%; width: 24px; height: 12px; /*background:url(../../../sprites/common/jt_up2.png) no-repeat 0 0;*/}
+  
+    @media screen and (min-width: 1200px){
+        .book_list {width:990px;}
+        .book_list ul{ margin-right: -42px;}
+        .book_list li{ float: left; width:130px; margin-right: 42px; margin-bottom: 37px; line-height:@booklist-lineheigh; word-break:break-all; }
+	};
+}
+
+
+
+
+
+
+
+
+

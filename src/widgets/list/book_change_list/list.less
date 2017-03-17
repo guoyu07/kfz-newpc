@@ -1,0 +1,97 @@
+/*引入公共变量*/
+@import "src/less/variables.less";
+@img-border:    #e5e5e5;
+@shoplist-box-border1:#e5e5e5;
+@shoplist-box-border2:#d6d6d6;
+
+@page_box-a-color:#666;
+@shop-name-box-size:12px;
+@shop-name-box-color:#666;
+@shop-name-box-bg:#f7f7f6;
+@shop_name_list-a:#333;
+
+@shop_name_list-a-backgroud1:#f3f0e9;
+@shop_name_list-a-backgroud2:#e2e1dd;
+@shop_name_list-a-hover:#fff;
+@shoplist_txt-price-color:#bf7f5f;
+@shoplist_txt-price-size:16px;
+
+@long-tit-border:#d6d6d6;
+@long-tit-bg:#ececec;
+@long-tit-a:#333;
+@red-border-color:#8c222c;
+@red-border-size:12px;
+
+
+.book_change_list{
+       .xinshu_long_tit{ border-bottom: 1px solid @long-tit-border;  background: @long-tit-bg; height: 59px; line-height: 59px; padding: 0 33px; overflow: hidden;}
+       .xinshu_long_tit a{ font-size: 16px; color:@long-tit-a; word-break: break-all; }
+       .xinshu_long_tit .red_border{font-size: @red-border-size; color: @red-border-color; border: 1px solid @red-border-color; margin-right: 10px;}
+       .xinshu_long_tit .tit_shop_name{width: 140px; word-break:break-all; overflow: hidden; text-align: right; font-size: @font-size-lv5; color:@font-color-lv2;}
+       .tit_shop_left{ width: 550px;}
+       .shoplist_box {width:  790px;}
+       .shoplist_box ul{ border: 1px solid @shoplist-box-border1; border-top:none;margin-bottom:40px; height: 205px;}
+       .shop_name_box { display: none;}
+       
+      
+       .shop_name_list{ width:30%; height:205px; background:@shop_name_list-a-backgroud1;}
+       .shop_name_list a.bt{ display: block; height: 41px; line-height: 41px; font-size: 12px; color:@shop_name_list-a; border-bottom: 1px solid @shoplist-box-border1; border-right: 1px solid @shoplist-box-border1; padding: 0 30px;white-space: nowrap;word-break: break-all; overflow: hidden;}
+       .shop_name_list a.bt.now{ background: @shop_name_list-a-hover;border-right:#fff;}
+       .shop_name_list a.bt.last{ border-bottom: none;}
+       .shop_name_list .page_box{ color: #999;line-height: 41px; padding-left:30px; font-size:@shop-name-box-size; }
+       .shop_name_list .page_box a,.shop_name_list .page_box span{ margin-right: 5px;}
+       .shop_name_list .page_box a{ color: @page_box-a-color;}
+
+       .shoplist_img_box{ float: left; width:186px; text-align: center; padding-top: 23px;}
+       .shoplist_img_box img{ max-width:156px; max-height:156px;}
+
+       .shoplist_txt{ display: block; overflow: hidden;zoom:1; padding: 23px 17px 0 0; height: 205px; position: relative; color:@font-color-lv2;}
+       .shoplist_txt a{ color:@font-color-default;}
+       .shoplist_txt a:hover{color:@font-color-lv2;}
+       .shoplist_txt .price{ color: @shoplist_txt-price-color; font-size: @shoplist_txt-price-size; position: absolute; bottom: 23px;}
+       .shoplist_txt .name_box a{ display: block; max-height:64px; overflow: hidden; }
+
+       .shoplist_box ul.bg-gray{border: 1px solid @shoplist-box-border2;}
+       .shoplist_box ul.bg-gray .shop_name_box{border-right: 1px solid @shoplist-box-border2;}
+    
+       .shoplist_box ul.bg-gray .shop_name_list{background:@shop_name_list-a-backgroud2;}
+       .shoplist_box ul.bg-gray .shop_name_list a{border-bottom: 1px solid @shoplist-box-border2; border-left: 1px solid @shoplist-box-border2; }
+       .shoplist_box ul.bg-gray .shop_name_list a.now{ background: @shop_name_list-a-hover;border-left:#fff;}
+       .shoplist_box ul.bg-gray .shop_name_list a.last{ border-bottom: none;}
+
+       .shoplist_box ul li.text_box{ background: #fff;}
+       .nomore_box { padding: 10px 10px 55px 10px;  color: #999;}
+      //按钮
+      // .btn_yellow_100_32{
+      //   display:inline-block;       
+      //   .btnmake (100px,32px,#fff,#bf7f5f,14px,#fff,#8c222c);
+      // }
+      
+        //图标
+      // .jt_up2{ display: none; position: absolute; bottom: -13px; left: 33%; width: 24px; height: 12px; /*background:url(../../../sprites/common/jt_up2.png) no-repeat 0 0;*/}
+  
+    @media screen and (min-width: 1200px){
+       .shop_name_box{ display: block; width: 22%; height:205px; overflow: hidden;background:@shop-name-box-bg;  border: 1px solid @shoplist-box-border1; border-left: none; border-top: none; font-size: @shop-name-box-size;}
+       .pd_box{ padding:10px 10px 10px 30px;}
+       
+       .xinshu_long_tit .tit_shop_left{ width:auto;}
+       .xinshu_long_tit .tit_shop_name{ display: none; }
+
+       .shop_name_box p{ line-height: 30px; color: @shop-name-box-color;}
+       .shop_name_box a.enter_shop{ color: @font-color-default;}
+
+        .shoplist_img_box{ width:230px;}
+        .shoplist_box {width:990px;}
+        .shoplist_txt{ padding: 23px 30px 0 0; }
+        i,b{ font-weight: normal;font-style:normal;}
+        };
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+/*引入公共变量*/
+@import "src/less/variables.less";
+@import "src/less/btn/btn.less";
+
+@head-bg: #f3f0e9;
+@search-iput-box-border:#8c222c;
+@search-iput-box-bg:#fff;
+@placeholder-color:#b3b3b3;
+@search-btn-color:#fff;
+@search-btn-bg:#8c222c;
+@search-btn-bg-hover:#78000b;
+@lead_tit-a-color:#333;
+@lead_tit-a-now:#8c222c;
+@nav_box-a-color:#56453d;
+@nav_box-li-line:#c8bfbb;
+@assBox-border:#e5e5e5;
+@assBox-bg:#fafafa;
+@assBox-a-color:#333;
+@assBox-a-hover-bg:#eee;
+@assBox-a-hover-color:#8c222c;
+@search_del-color:#8999a9;
+
+.m_t22{ margin-top: 22px;}
+.m_r12{ margin-right: 12px;}
+
+
+.head_bg{ 
+    background:@head-bg; height:100px; width:100%; zoom:1;
+
+    .logo img{ width:278px; margin-top:30px;}
+    .logo_right{ float:right;padding-top:15px;}
+    .logo_right .search_iput_box{ float:left;width:597px;border:2px solid @search-iput-box-border;background:@search-iput-box-bg; height:40px; line-height:40px; position:relative;}
+    .logo_right .search_big_box .pos{ position:relative; float:left;}
+    .logo_right .search_big_box .pos .placeholder{ position:absolute; background:@search-iput-box-bg; left:0; top:0; color:@placeholder-color; font-size:12px; line-height:31px;}
+    .logo_right .search_big_box .search_iput_box input{ width:560px; height:35px; font-size:12px; line-height:35px;border:none;vertical-align:top;}
+    .logo_right .search_big_box .search_ico{ display:block; float:left; width:13px; height:14px; margin:9px 5px 0 10px;}
+    .logo_right a.search_btn{ float:left;width:97px; height:40px; line-height:40px; color:@search-btn-color; text-align:center; background:@search-btn-bg;cursor:pointer; font-size:16px; font-family:"微软雅黑" }
+    .logo_right a.search_btn:hover{background:@search-btn-bg-hover;}
+    .logo_right .lead_tit a{ display:block; float:left; line-height:24px; height:24px; margin-right:10px; position:relative; color:@lead_tit-a-color;}
+    .logo_right .lead_tit a.now{ color:@lead_tit-a-now; font-weight:bold;}
+    .logo_right .lead_tit a span{ display:none;}
+    .logo_right .lead_tit a.now span{ display:block; position:absolute; top:21px; left:40%; }
+    .logo_right  .search-target{color:@font-color-lv2; line-height: 18px; margin-top: 2px;}
+
+   
+/*联想弹层*/
+    .logo_right .search_iput_box .assBox{ display:block; position:absolute; top:35px; left:0; border:1px solid @assBox-border; background:@assBox-bg;width: 593px; padding:5px 0; display:none;}
+    .logo_right .search_iput_box .assBox a{ display:block; line-height:20px; color:@assBox-a-color; padding:0 10px;}
+    .logo_right .search_iput_box .assBox a:hover{ background:@assBox-a-hover-bg; color:@assBox-a-hover-color;}
+    .logo_right .search_iput_box .asstit{ color:@font-color-lv3; padding:0 10px;line-height:22px; }
+    .logo_right .search_iput_box .assBox a span.search_del{ display:none;}
+    .logo_right .search_iput_box .assBox a:hover span.search_del{ display:block; float:right; color:@search_del-color;}
+
+}
+.head_border_btm{ border: 1px solid #e5e5e5;}
+.head{
+    .nav_box ul.left_part{ position:relative; padding-right:20px; margin-right:50px;}
+    .nav_box li{ float:left; margin-right:32px; padding:0 15px; font-size:16px; height:58px; line-height:58px;}
+    .nav_box li a{ display:block; color:@nav_box-a-color; font-weight:bold;}
+    .nav_box li.line_right{ border-left:1px solid @nav_box-li-line; height:16px; width:1px; position:absolute; right:0; top:21px; padding:0; margin:0;}
+}
+
+
+
+
+
+
+/*图标*/
+.jiantou_up{ width:8px; height:4px;background:url(../../../sprites/common/jiantou_up.png) no-repeat 0 0;}
+.search{ display:block; width:12px; height:13px;background:url(../../../sprites/common/search.png) no-repeat 0 0;}
+.shu1{ display:block; width:13px; height:16px;background:url(../../../sprites/common/shu1.png) no-repeat 0 0;}
+.shu2{  display:block; width:16px; height:16px;background:url(../../../sprites/common/shu2.png) no-repeat 0 0;}

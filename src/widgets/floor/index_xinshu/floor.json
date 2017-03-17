@@ -1,0 +1,16 @@
+{
+    "name": "floor/index_xinshu",
+    "type": "widget",
+    "description": "",
+    "version": "0.0.1",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": ["list/shop","gallery/xinshu"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}

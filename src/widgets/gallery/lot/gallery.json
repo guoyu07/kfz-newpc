@@ -1,0 +1,16 @@
+{
+  "name": "gallery/lot",
+  "type": "widget",
+  "description": "古籍珍本",
+  "version": "1.0.0",
+  "author": "zhaoxuan",
+  "contributors": [
+    {
+      "name": "lichenglong",
+      "email": "lichenglong@kongfz.com"
+    }
+  ],
+  "widgetDeps": [],
+  "jsDeps": ["libs/jQuery.js"],
+  "cssDeps": ["less/bootstrap.less"]
+}

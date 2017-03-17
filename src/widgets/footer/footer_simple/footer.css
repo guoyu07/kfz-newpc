@@ -1,0 +1,21 @@
+/*
+* @Author: zhaoxuan
+* @Date:   2016-12-19
+* @Last Modified by:   zhaoxuan
+* @Last Modified time: 2016-12-19
+*/
+
+/*当屏幕的宽度小于1200px的时候采用下面的样式进行显示设定版心的宽度并且居中*/
+/*友情链接*/
+.friend_link_box{ margin-bottom:55px;}
+.friend_link_box .friend_link_tit{ border-bottom:1px solid #e5e5e5; line-height:35px;}
+.friend_link_box .friend_link_tit a{ display:block; float:left; padding:0 10px; font-size:14px; color:#999;}
+.friend_link_box .friend_link_tit a.now{ border:1px solid #e5e5e5; border-bottom:none; background:#fff; position:relative; bottom:-1px; line-height:32px; height:35px;}
+.friend_link_box .friend_link_list a{ display:block; white-space:nowrap; float:left; margin-right:20px; font-size:14px; color:#999; line-height:20px;}
+.friend_link_box .friend_link_tit a:hover,.friend_link_box .friend_link_list a:hover{ color:#999;}
+
+
+/*当屏幕的宽度大于1200px的时候采用下面的样式进行显示*/
+@media screen and (min-width: 1200px) {
+
+}

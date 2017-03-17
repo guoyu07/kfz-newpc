@@ -1,0 +1,8 @@
+<?php if($isHide == '0' && !empty($data) && is_array($data)) { ?>
+    <?php foreach ($data as $k => $v) { ?>
+<div id="moduleId_<?php echo $moduleId; ?>" class="banner_1pic">
+    <ul class="clearfix">
+        <li><a href="<?php echo $v['linkUrl']; ?>"><img src="<?php echo $v['prefix'].$v['imgUrl']; ?>"/></a></li>
+    </ul>
+</div>
+<?php }} ?>

@@ -1,0 +1,12 @@
+{
+    "name": "floor/shop_jueban",
+    "type": "widget",    
+    "description": "书店首页独家精品绝版",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["gallery/book_list_pic108","title/main"],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运营后台</title>
+    <!-- build:head-css -->
+    <!-- endbuild -->
+</head>
+<body>
+<script>
+    // 主模块ID
+    var moduleId = <?=$moduleId?>;
+    //站点配置
+    var site = <?= json_encode($site)?>;
+</script>
+<div id="wrapper">
+    <!-- Navigation -->
+    <?php include APP_PATH . '/application/modules/Admin/views/common/nav.phtml'?>
+
+</div>
+<div id="page-wrapper">
+    <div class="sub-nav">
+        <label>位置：</label>
+        <span>超值低价－模块设置</span>
+        <a class="sub-nav-line" href="/index/index/shop#moduleId_<?=$moduleId?>" target="_blank">去看看线上样式</a>
+        <a class="sub-nav-show btn btn-primary" href="">预览</a>
+    </div>
+    <div class="periodical-box">
+        <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px;">
+            <li role="presentation"><a href="/admin/shop/dijiaIndex">商品池子</a></li>
+            <li role="presentation" class="active"><a href="javascript:;">模块设置</a></li>
+        </ul>
+
+        <ul class="nav nav-pills nav-justified" id="navPill-tab" role="tablist">
+            <li role="presentation"><a href="#tab=0">TAB</a></li>
+            <li role="presentation"><a href="#tab=1">标题</a></li>
+            <li role="presentation"><a href="#tab=2">报警邮件接收</a></li>
+            <li role="presentation"><a href="#tab=3">报警短信接收</a></li>
+            <li role="presentation"><a href="#tab=4">数据日报接收</a></li>
+        </ul>
+
+        <ul class="tab-box">
+            <li id="dataPanel">
+                <table id="table" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+            </li>
+            <li id="titlePanel">
+                <form id="form-title-module" style="margin-top:20px;">
+                    <div class="form-group">
+                        <div style="width:300px;">
+                            <input type="text" class="form-control" id="titleText" name="titleText" placeholder="请输入标题">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-default" value="保存修改">
+                    <div class="btn btn-default" style="margin-left: 20px;" onclick="app.moduleTitleFn.cancel()">放弃修改</div>
+                </form>
+            </li>
+            <li id="mailPanel">
+                报警邮件接收
+            </li>
+            <li id="smsPanel">
+                报警短信接收
+            </li>
+            <li id="dailyPanel">
+                数据日报接收
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 表格工具栏 -->
+<div id="toolbar" style="display:none;">
+    <div style="padding: 10px;">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="app.moduleTabFn.addItem()">新增</a>
+        <span style="display: inline-block;height: 26px;line-height: 26px;position: relative;overflow: hidden;margin: 0;padding: 0;vertical-align: top;margin-left:20px;">当前排序规则为：<span id="orderTip"></span></span>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="app.moduleTabFn.editOrder()">修改</a>
+    </div>
+</div>
+<!--新增-->
+<div id="win-add" class="easyui-window" title="添加/编辑TAB" data-options="modal:true,shadow:false,collapsible:false,minimizable:false,maximizable:false,resizable:false" style="display:none; width:700px;" closed="true">
+    <form id="form-add" class="form-horizontal">
+        <div class="item-box clearfix">
+            <div class="text-box">TAB名称：</div>
+            <div class="input-box" style="width:300px;">
+                <input type="text" class="form-control" id="tabName" name="tabName" placeholder="输入TAB名称">
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">分类编号：</div>
+            <div class="input-box" style="width:300px;">
+                <input type="text" class="form-control" id="tabNum" name="tabNum" placeholder="输入分类编号">
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">价格区间：</div>
+            <div class="input-box clearfix" style="width:300px;">
+                <div class="pull-left"style="width:100px;">
+                    <input type="text" class="form-control" id="minPrice" name="minPrice">
+                </div>
+                <div class="pull-left" style="width:50px;line-height: 34px;height: 34px;text-align: center;">~</div>
+                <div class="pull-left" style="width:100px;">
+                    <input type="text" class="form-control" id="maxPrice" name="maxPrice">
+                </div>
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">是否显示：</div>
+            <div class="input-box">
+                <input id="showType" name="showType" class="easyui-combobox">
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">TAB排序：</div>
+            <div class="input-box">
+                 <input id="order" name="order" class="easyui-numberspinner" value="1" data-options="min:1" >
+            </div>
+        </div>
+        <div class="buttons clearfix" style="width: 200px;">
+            <input type="submit" class="btn btn-default pull-left" value="保存">
+            <div class="btn btn-default pull-right" style="margin-left: 20px;" onclick="app.moduleTabFn.closeAddWin()">放弃</div>
+        </div>
+    </form>
+</div>   
+<!--修改TAB排序-->
+<div id="win-order-type" class="easyui-window" title="修改TAB排序" data-options="modal:true,shadow:false,collapsible:false,minimizable:false,maximizable:false,resizable:false" style="display:none;width:600px;" closed="true">
+    <div style="padding:20px;">
+        <div style="margin-bottom:20px;">
+            <div class="input-box" style="width:200px;margin:0 auto;">
+                <input id="orderType" name="orderType" class="easyui-combobox" style="width:200px;">
+            </div>
+        </div>
+        <div>
+            <div class="buttons clearfix" style="width: 200px;margin:0 auto;">
+                <div class="btn btn-default pull-left" onclick="app.moduleTabFn.editOrderType()">保存</div>
+                <div class="btn btn-default pull-right" style="margin-left: 20px;" onclick="app.moduleTabFn.closeOrderWin()">放弃</div>
+            </div>
+        </div>
+    </div>
+</div>  
+<!-- build:footer-js -->
+<!-- endbuild -->
+</body>
+</html>

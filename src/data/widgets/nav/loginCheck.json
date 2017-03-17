@@ -1,0 +1,10 @@
+{
+  "status" : "true",
+  "isLogin" : 1,
+  "userId" : "5256107",
+  "nickname" : "autotest02",
+  "userType" : [
+  	"shopkeeper",
+  	"auctioneer"
+  ]
+}

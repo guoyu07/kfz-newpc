@@ -1,0 +1,17 @@
+{
+    "name": "category/mian",
+    "type": "widget",
+    "description": "首页分类模块",
+    "version": "1.0.0",
+    "author": "chenhui",
+    "contributors": [
+        {
+            "name": "chenhui",
+            "email": "chenhui@kongfz.com"
+        }
+    ],
+    "spriteDeps": [],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js","libs/perfect-scrollbar/perfect-scrollbar.js"],
+    "cssDeps": ["less/bootstrap.less","less/list-group/list-group.less","libs/perfect-scrollbar/perfect-scrollbar.css"]
+}

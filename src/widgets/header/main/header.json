@@ -1,0 +1,13 @@
+{
+    "name": "header/main",
+    "type": "widget",
+    "description": "首页搜索模块",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js","libs/store.js"],
+    "cssDeps": ["less/bootstrap.less"]
+
+}

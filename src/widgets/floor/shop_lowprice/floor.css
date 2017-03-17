@@ -1,0 +1,20 @@
+.ancient-box {
+    width: 1000px;
+    margin: 0 auto;
+}
+.ancient-box .ancient-left {
+    float: left;
+    width: 616px;
+}
+.ancient-box .ancient-right {
+    float: left;
+    width: 384px;
+}
+@media only screen and (min-width: 1200px) {
+    .ancient-box {
+        width: 1200px;
+    }
+    .ancient-box .ancient-left {
+        width: 816px;
+    }
+}

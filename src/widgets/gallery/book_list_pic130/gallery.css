@@ -1,0 +1,127 @@
+/*
+* @Author: zhaoxuan
+* @Date:   2016-12-15 10:11:06
+* @Last Modified by:   zhaoxuan
+* @Last Modified time: 2016-12-23 14:02:55
+*/
+
+/*当屏幕的宽度小于1200px的时候采用下面的样式进行显示设定版心的宽度并且居中*/
+
+.price-color {
+    color: #aa8877;
+}
+.font12 {
+    font-size: 12px;
+}
+/*楼层的主要内容的推荐商品或者拍品样式的处理*/
+.gallery-book-title {
+    width: 100%;
+    height: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px;
+}
+.gallery-book-title span {
+    font-size: 18px;
+    top: 12px;
+    left: 20px;
+    color: #333;
+    font-weight: bold;
+}
+.gallery-book-title i {
+    font-size: 18px;
+    color: #cccccc;
+}
+.gallery-book-title a {
+    font-size: 12px;
+    color: #0057a0;
+}
+.gallery-book-list {
+    width: 100%;
+}
+.gallery-book-product {
+    width: 100%;
+    text-align: justify;
+}
+.gallery-book-product .gallery-book-slide {
+    position: relative;
+    float: none;
+    display: inline-block;
+    width: 108px;
+    height: 246px;
+    margin-bottom: 36px;
+}
+.gallery-book-product .gallery-book-slide .gallery-book-product-text {
+    display: block;
+    font-size: 12px;
+    color: #333333;
+    word-break: break-all;
+    max-height: 36px;
+    overflow: hidden;
+ }
+.gallery-book-product .gallery-book-slide .gallery-book-author {
+    color: #999999;
+    font-size: 12px;
+}
+ .gallery-book-product .gallery-book-slide .gallery-book-product-text:hover {
+     color:#8c222c;
+ }
+.gallery-book-product .gallery-book-slide .gallery-book-product-price {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 15px;
+    color: #bf7f5f;
+}
+.gallery-book-product .gallery-book-slide .gallery-book-product-price span {
+    color: #bbbbbb;
+    font-size: 12px;
+}
+.gallery-book-product .gallery-book-slide .gallery-book-list-img {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 4px;
+    overflow: visible;
+}
+.gallery-book-product .gallery-book-slide .gallery-book-list-img img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    font-size: 0;
+    margin: 0;
+}
+
+
+.layer-region {
+    position: relative;
+}
+.layer-inner {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 272px;
+    height: 104px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #666666;
+    text-align: justify;
+    padding: 4px 6px;
+    line-height: 21px;
+}
+@media only screen and (min-width: 1200px) {
+    .gallery-book-product {
+        width: 976px;
+        word-break: break-all;
+    }
+    .gallery-book-product .gallery-book-slide {
+        float: left;
+        margin-right:30.666666px;
+    }
+}

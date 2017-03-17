@@ -1,0 +1,31 @@
+<!--楼层的主要内容的推荐商品或者拍品-->
+<div class="gallery-main-list">
+    <p class="gallery-main-title"><span><?= $subTitle ?> / <a href="<?= $subMoreLink ?>">更多</a></span></p>
+    <div class="gallery-main-product clearfix" style="height: 486px;">
+        <?php
+        for ($i = 0; $i < count($itemId); $i++) {
+            ?>
+            <span class="gallery-lot-slide">
+                <span class="gallery-book-list-img"><img src="<?= $itemImg[$i] ?>" alt=""></span>
+                <a href="<?= $site['pm'] . $itemId[$i] ?>" class="gallery-main-product-text"
+                   title="<?= $itemName[$i] ?>" target="_blank"><?= $itemName[$i] ?></a>
+                <p class="gallery-book-time"><?= $remainTime[$i] ?></p>
+                <p class="gallery-main-product-price"><?php
+                    if ($bidNum[$i] < 1) { ?>
+                    <span>起拍价</span><i>￥<?= $beginPrice[$i] ?> </i></p>
+                <?php
+                } else {
+                    ?>
+                    <span>当前价</span><i>￥<?= $maxPrice[$i] ?> </i></p>
+                    <?php
+                }
+                ?>
+        </span>
+        <?php }
+        ?>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+    </div>
+</div>

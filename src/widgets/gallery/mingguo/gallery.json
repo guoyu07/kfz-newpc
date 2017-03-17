@@ -1,0 +1,16 @@
+{
+    "name": "gallery/mingguo",
+    "type": "widget",
+    "description": "明国书刊",
+    "version": "0.0.1",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

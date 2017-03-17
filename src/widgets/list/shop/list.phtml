@@ -1,0 +1,19 @@
+<!--楼层的推荐的书店或者拍卖专场-->
+<div class="list-recommand-list">
+    <p class="list-main-title"><span><?= $shopModuleName ?></span></p>
+    <ul>
+        <?php
+        for ($i = 0; $i < count($shopId); $i++) { ?>
+            <li>
+                <div class="f_left"><span class="ico-small-box"></span></div>
+                <div class="text_box"><a href="<?= $site['shop'] . $shopId[$i] ?>"
+                                         class="list-recommand-list-name"><?= $shopName[$i] ?></a></div>
+                <p class="list-recommand-list-intro"><?= $recommend[$i] ?></p>
+                <p class="list-shop-line"></p>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+    <!--<div class="list-open-shop"><a href="#" class="list-open-shop-btn">我要开书店</a></div>-->
+</div>

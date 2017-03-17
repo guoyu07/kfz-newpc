@@ -1,0 +1,18 @@
+{
+    "name": "index/index",
+    "module": "index",
+    "type": "page",
+    "description": "孔夫子旧书网首页",
+    "version": "1.0.0",
+    "author": "chenhui",
+    "contributors": [
+        {
+            "name": "chenhui",
+            "email": "chenhui@kongfz.com"
+        }
+    ],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["nav/top", "header/main", "banner/full", "category/main", "ad/pmgs", "ad/zhuanti", "floor/main","gallery/book","ad/zhuanti", "floor/index_guji","floor/index_art", "floor/index_mingguo", "floor/index_xinshu","footer/friendlink","footer/main"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}

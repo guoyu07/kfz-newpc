@@ -1,0 +1,12 @@
+{
+    "name": "nav/shopleftbar",
+    "type": "widget",
+    "description": "书店左侧栏模块",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

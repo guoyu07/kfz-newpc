@@ -1,0 +1,101 @@
+<?php if($isHide == '0' && count($data) > 0) { ?>
+<!-- 5\6\7\8个广告位 -->
+<?php if(count($data) > 6) { ?>
+<div id="moduleId_<?php echo $moduleId; ?>" class="pmgs-box clearfix">
+    <ul class="container clearfix">
+    <?php foreach ($data as $k => $v) { ?>
+    <?php if($k < 6) { ?>
+        <li class="<?php if(count($data) == 8) {echo 'col-sm-8 col-xs-6';} else if(count($data) == 7) {echo 'col-sm-7 col-xs-5';} ?>">
+            <a href="<?php echo $v['linkUrl']; ?>" class="pmgs-box-link">
+                <div class="pmgs-box-padding">
+					<span class="pmgs-inner">
+						<span class="pmgs-title"><?php echo $v['title']; ?></span>
+						<span class="pmgs-content-line">
+							<div class="pmgs-data"><?php echo $v['firstDesc']; ?></div>
+							<span class="pmgs-content" title="<?php echo $v['secondDesc']; ?>"><?php echo $v['secondDesc']; ?></span>
+						</span>
+					</span>
+                </div>
+            </a>
+        </li>
+    <?php } else { ?>
+    	<li class="<?php if(count($data) == 8) {echo 'col-sm-8 visible-xs';} else if(count($data) == 7) {echo 'col-sm-7 visible-xs';} ?>">
+            <a href="<?php echo $v['linkUrl']; ?>" class="pmgs-box-link">
+                <div class="pmgs-box-padding">
+					<span class="pmgs-inner">
+						<span class="pmgs-title"><?php echo $v['title']; ?></span>
+						<span class="pmgs-content-line">
+							<div class="pmgs-data"><?php echo $v['firstDesc']; ?></div>
+							<span class="pmgs-content" title="<?php echo $v['secondDesc']; ?>"><?php echo $v['secondDesc']; ?></span>
+						</span>
+					</span>
+                </div>
+            </a>
+        </li>
+    <?php }} ?>
+        <div class="last-border-right"></div>
+    </ul>
+</div>
+<?php } else if(count($data) <= 6 && count($data) > 4) { ?>
+<div id="moduleId_<?php echo $moduleId; ?>" class="pmgs-box clearfix">
+    <ul class="container clearfix">
+    <?php foreach ($data as $k => $v) { ?>
+        <li class="<?php if(count($data) == 6) {echo 'col-xs-6';} else if(count($data) == 5) {echo 'col-xs-5';}?>">
+            <a href="<?php echo $v['linkUrl']; ?>" class="pmgs-box-link">
+                <div class="pmgs-box-padding">
+					<span class="pmgs-inner">
+						<span class="pmgs-title"><?php echo $v['title']; ?></span>
+						<span class="pmgs-content-line">
+							<div class="pmgs-data"><?php echo $v['firstDesc']; ?></div>
+							<span class="pmgs-content" title="<?php echo $v['secondDesc']; ?>"><?php echo $v['secondDesc']; ?></span>
+						</span>
+					</span>
+                </div>
+            </a>
+        </li>
+    <?php } ?>
+        <div class="last-border-right"></div>
+    </ul>
+</div>
+<!-- 3\4个广告位 -->
+<?php } else if(count($data) <= 4 && count($data) > 2) { ?>
+<div id="moduleId_<?php echo $moduleId; ?>" class="pmgs-box clearfix">
+    <ul class="container clearfix">
+    <?php foreach ($data as $k => $v) { ?>
+        <li class="<?php if(count($data) == 4) {echo 'col-xs-4';} else if(count($data) == 3) {echo 'col-xs-3';} ?>">
+            <a href="<?php echo $v['linkUrl']; ?>" class="pmgs-box-link">
+                <div class="pmgs-box-padding">
+					<span class="pmgs-inner clearfix">
+						<span class="pmgs-content-line clearfix">
+							<span class="pmgs-data"><span class="pmgs-title"><?php echo $v['title']; ?></span><?php echo $v['firstDesc']; ?></span><span class="pmgs-content" title="<?php echo $v['secondDesc']; ?>"><?php echo $v['secondDesc']; ?></span>
+						</span>
+					</span>
+                </div>
+            </a>
+        </li>
+    <?php } ?>
+        <div class="last-border-right"></div>
+    </ul>
+</div>
+<!-- 2个广告位 -->
+<?php } else { ?>
+<div id="moduleId_<?php echo $moduleId; ?>" class="pmgs-box clearfix">
+    <ul class="container clearfix">
+    <?php foreach ($data as $k => $v) { ?>
+        <li class="col-xs-2">
+            <a href="<?php echo $v['linkUrl']; ?>" class="pmgs-box-link">
+                <div class="pmgs-box-padding">
+					<span class="pmgs-inner clearfix">
+						<span class="pmgs-content-line clearfix">
+							<span class="pmgs-data"><span class="pmgs-title"><?php echo $v['title']; ?></span><?php echo $v['firstDesc']; ?></span><span class="pmgs-content" title="<?php echo $v['secondDesc']; ?>"><?php echo $v['secondDesc']; ?></span>
+						</span>
+					</span>
+                </div>
+            </a>
+        </li>
+    <?php } ?>
+        <div class="last-border-right"></div>
+    </ul>
+</div>
+<?php } ?>
+<?php } ?>

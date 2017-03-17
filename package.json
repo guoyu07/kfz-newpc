@@ -1,0 +1,27 @@
+{
+  "name": "gulp-example",
+  "version": "0.0.1",
+  "description": "A simple gulp example.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "dongnan",
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "underscore": "^1.8.3",
+    "gulp-file-include": "^1.0.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-less": "^3.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "~0.1.7",
+    "gulp-uglify": "^2.0.0",
+    "gulp-md5-plus": "~0.2.5",
+    "gulp.spritesmith": "^6.2.1",
+    "gulp-watch": "^4.3.11"
+  }
+}

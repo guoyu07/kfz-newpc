@@ -1,0 +1,278 @@
+/*
+ * 首页分类模块
+ * author : chenhui@kongfz.com
+ * */
+//  分类模块宽度
+@cagetory-box-width:                230px;
+//  分类模块层级
+@cagetory-box-zindex:               1001;
+
+ .cagetory-box {
+    position: absolute;
+    top: -266px;
+    left: 0px;
+    z-index: @cagetory-box-zindex;
+    width: @cagetory-box-width;
+    height: auto;
+    background-color: #fff;
+    .split-block {
+        width: 100%;
+        height: 30px;
+    }
+    .list-group {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        &.other {
+            border-bottom: 1px solid #ddd;
+        }
+        .list-group-item {
+            .item-text {
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                z-index: 5;
+                width: 230px;
+                height: 35px;
+                line-height: 31px;
+                padding: 0px 15px;
+                border: 2px solid transparent;
+                border-right: 0px;
+                font-size: 0px;
+                .link {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 50%;
+                    height: 31px;
+                    color: #59070f;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                .text {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 185px;
+                    height: 32px;
+                    font-size: 12px;
+                    overflow: hidden;
+                    .title {
+                        color: #56453d;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    .item-title {
+                        color: #666;
+                        text-decoration: none;
+                    }
+                    .split-line {
+                        color: #dddddd;
+                    }
+                }
+                .ico {
+                    display: inline-block;
+                    vertical-align: top;
+                    height: 32px;
+                    font-size: 12px;
+                    color: #cfc8c4;
+                }
+            }
+            .detail {
+                display: none;
+                position: absolute;
+                top: -1px;
+                left: 229px;
+                z-index: 4;
+                width: 767px;
+                height: 0px;
+                border: 2px solid #8c222c;
+                background-color: #f6f6f6;
+            }
+            &.active {
+                .item-text {
+                    border-color: #8c222c;
+                    background-color: #f6f6f6;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0px;
+                        right: -2px;
+                        z-index: 5;
+                        display: block;
+                        width: 2px;
+                        height: 31px;
+                        background-color: #f6f6f6;
+                    }
+                }
+                .detail {
+                    display: block;
+                }
+            }
+            &.item-header {
+                a.title {
+                    font-weight: bold;
+                    color: #fff;
+                    font-size: 16px;
+                }
+                a.label {
+                    color: #d6d6d6;
+                    font-size: 12px;
+                }
+            }
+
+        }
+
+    }
+    .platform {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        .item {
+            display: block;
+            width: 100%;
+            height: 68px;
+            margin-bottom: 10px;
+            .ico {
+                display: block;
+                width: 60px;
+                height: 68px;
+                background-color: #e9e4d9;
+                .ico-box {
+                    display: block;
+                    margin-top: 22px;
+                    margin-left: 18px;
+                }
+            }
+            .text {
+                display: block;
+                width: 170px;
+                height: 68px;
+                padding: 15px 10px;
+                background-color: #eee;
+                .title {
+                    display: block;
+                    padding-bottom: 5px;
+                    font-size: 16px;
+                    color: #333;
+                }
+                .lable {
+                    display: block;
+                    height: 14px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #999;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+    .other-info {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        &.scroll {
+            height: 250px;
+            overflow: hidden;
+        }
+        .help {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            width: 100%;
+            .header {
+                display: block;
+                height: 32px;
+                border-bottom: 1px solid #e5e5e5;
+                .text {
+                    display: block;
+                    height: 32px;
+                    padding-left: 22px;
+                    font-size: 12px;
+                    line-height: 32px;
+                    color: #bf7f5f;
+                }
+                 .ico {
+                    display: block;
+                    width: 12px;
+                    height: 32px;
+                    .ico-box {
+                        display: block;
+                        margin-top: 10px;
+                    }
+                }
+                .label {
+                    color: #999;
+                }
+            }
+            .list {
+                border-bottom: 1px solid #e5e5e5;
+                &.last {
+                    border-bottom: none;
+                }
+                .ico {
+                    display: block;
+                    width: 12px;
+                    height: 32px;
+                    .ico-box {
+                        display: block;
+                        margin-top: 10px;
+                    }
+                }
+                .text {
+                    padding: 6px 0px 6px 22px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: #666;
+                    .item {
+                        width: 100%;
+                        height: 36px;
+                        margin-bottom: 16px;
+                        &.last {
+                            margin-bottom: 0px;
+                        }
+                        .phone {
+                            margin-top: 4px;
+                            font-size: 14px;
+                        }
+                        .label {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+        .disseminate {
+            width: 100%;
+            margin-top: 55px;
+            .app {
+                width: 110px;
+            }
+            .header {
+                height: 16px;
+                line-height: 16px;
+                color: #55453d;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            .code-qr {
+                width: 110px;
+                height: 110px;
+                background-color: #848484;
+            }
+            .title {
+                height: 30px;
+                color: #666;
+                line-height: 30px;
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+    }
+}

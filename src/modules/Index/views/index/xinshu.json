@@ -1,0 +1,13 @@
+{
+    "name": "index/xinshu",
+    "module": "index",
+    "type": "page",
+    "description": "孔夫子旧书网新书首页",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["nav/top","banner/banner_1pic","banner/full","floor/xinshu_banner","floor/xinshu_tesejingpin","ad/zhuanti","nav/xinshuleftbar","floor/xinshu_jinqichuban","floor/xinshu_dijiacuxiao","header/main", "footer/footer_simple"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}

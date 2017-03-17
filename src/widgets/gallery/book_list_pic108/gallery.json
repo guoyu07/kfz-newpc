@@ -1,0 +1,11 @@
+{
+  "name": "gallery/book_list_pic108",
+  "type": "widget",
+  "description": "图片108*160px，1200px分辨率下，margin间隔值68px 的列表",
+  "version": "1.0.0",
+  "author": "wangjing",
+  "contributors": [],
+  "widgetDeps": [],
+  "jsDeps": ["libs/jQuery.js"],
+  "cssDeps": ["less/bootstrap.less"]
+}

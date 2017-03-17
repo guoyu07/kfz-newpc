@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>模块文档</title>
+        <style>
+            body{background-color:#FDFDFD;}
+            .margin-left-5px{margin-left:5px;}
+            .separate{padding:5px;}
+            .red{color:red;}
+            .menu{position:fixed;left:20px;top:20px;bottom:20px;width:300px;overflow-y:scroll;background-color:#F8F8F8;padding-right:20px;}
+            .menu ul{list-style:none;padding-left: 20px;line-height: 1.2em;}
+            .menu li a{text-decoration:none;}
+            .content{position:relative;left:350px;width:800px;}
+            .content .title{font-size:32px;font-weight:bold;text-align:center;background-color:#efefef;margin-top:20px;}
+            .content .json{background-color:#FFF;padding:20px;}
+            .content .json ul{list-style:none;}
+            .content .readme{background-color:#FFF;padding:20px;border-top:solid #888 1px;}
+            .content .readme h1{font-size:28px;}
+            .content .readme h2{font-size:24px;}
+            .content .readme h3{font-size:20px;}
+            .content .readme h4{font-size:18px;}
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <ul>
+                <?php $i = 1; ?>
+                <?php foreach ($widgets as $key => $value): ?>
+                    <li><a href="#<?= $key ?>"><b><?= $i ?> <?= $key ?></b></a></li>
+                    <?php $j = 1; ?>
+                    <ul>
+                        <?php foreach ($value as $k => $v): ?>
+                            <li><a href="#<?= $key . '/' . $k ?>"><?= "{$i}.{$j}" ?> <?= $key . '/' . $k ?></a></li>
+                            <?php $j++; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php $i++; ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
+        <div class="content">
+            <?php foreach ($widgets as $key => $value): ?>
+                <a name="<?= $key ?>"></a>
+                <?php foreach ($value as $k => $v): ?>
+                    <a name="<?= $key . '/' . $k ?>"></a>
+                    <div class="title"><?= $key . '/' . $k ?></div>
+                    <div class="json">
+                        <ul>
+                            <li>
+                                <b>name:</b>
+                                <?php if (!empty($v['json']['name'])): ?>
+                                    <?= $v['json']['name'] ?>
+                                    <?php if ($v['json']['name'] != $key . '/' . $k): ?>
+                                        <span class="red margin-left-5px">(name与模块目录结构不一致，<b>无法正确构建</b>)</span>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <span class="red">(请补充name信息，否则<b>无法正在使用</b>)</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>type:</b>
+                                <?php if (!empty($v['json']['type'])): ?>
+                                    <?= $v['json']['type'] ?>
+                                    <?php if ($v['json']['type'] != 'widget'): ?>
+                                        <span class="red margin-left-5px">(type必须为widget，否则<b>无法正确构建</b>)</span>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <span class="red">(请补充type信息，否则<b>无法正确构建</b>)</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>author:</b>
+                                <?php if (!empty($v['json']['author'])): ?>
+                                    <?= $v['json']['author'] ?>
+                                <?php else: ?>
+                                    <span class="red">(请补充author信息，方便后期维护)</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>version:</b>
+                                <?php if (!empty($v['json']['version'])): ?>
+                                    <?= $v['json']['version'] ?>
+                                <?php else: ?>
+                                    <span class="red">(请补充version信息)</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>description:</b>
+                                <?php if (!empty($v['json']['description'])): ?>
+                                    <?= $v['json']['description'] ?>
+                                <?php else: ?>
+                                    <span class="red">(请补充description信息，介绍模块用途)</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>contributors:</b>
+                                <?php if (!empty($v['json']['contributors']) && is_array($v['json']['contributors'])): ?>
+                                    <?php foreach ($v['json']['contributors'] as $contributor): ?>
+                                        <?php
+                                        $hasName  = false;
+                                        $hasEmail = false;
+                                        ?>
+                                        <?php if (!empty($contributor['name'])): ?>
+                                            <?php $hasName = true; ?>
+                                            <span><?= $contributor['name'] ?></span>
+                                        <?php endif; ?>
+                                        <?php if (!empty($contributor['email'])): ?>
+                                            <?php if ($hasName): ?>
+                                                <span>(<?= $contributor['email'] ?>)</span>
+                                            <?php else: ?>
+                                                <span><?= $contributor['email'] ?></span>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                        <?php if ($hasName || $hasEmail): ?>
+                                            <span class="separate"></span>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>widgetDeps:</b>
+                                <?php if (!empty($v['json']['widgetDeps'])): ?>
+                                    <?php if (is_array($v['json']['widgetDeps'])): ?>
+                                        <?= implode(',', $v['json']['widgetDeps']) ?>
+                                    <?php else: ?>
+                                        <span class="red">(widgetDeps格式错误，<b>无法正确构建</b>)</span>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <span>无</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>jsDeps:</b>
+                                <?php if (!empty($v['json']['jsDeps'])): ?>
+                                    <?php if (is_array($v['json']['jsDeps'])): ?>
+                                        <?= implode(',', $v['json']['jsDeps']) ?>
+                                    <?php else: ?>
+                                        <span class="red">(jsDeps格式错误，<b>无法正确构建</b>)</span>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <span>无</span>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <b>cssDeps:</b>
+                                <?php if (!empty($v['json']['cssDeps'])): ?>
+                                    <?php if (is_array($v['json']['cssDeps'])): ?>
+                                        <?= implode(',', $v['json']['cssDeps']) ?>
+                                    <?php else: ?>
+                                        <span class="red">(cssDeps格式错误，<b>无法正确构建</b>)</span>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <span>无</span>
+                                <?php endif; ?>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="readme"><?= $v['readme'] ?: '<b class="red">缺少README.md，请及时补充。</b>' ?></div>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+    </body>
+</html>

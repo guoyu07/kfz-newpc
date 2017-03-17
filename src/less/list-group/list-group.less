@@ -1,0 +1,33 @@
+//
+// 列表组样式
+// --------------------------------------------------
+
+//** 加载混入函数
+@import "variables.less";
+//** 列表组基本样式
+.list-group {
+  .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0px 15px;
+    margin-bottom: -1px;
+    height: @list-group-height;
+    line-height: @list-group-height - 1;
+    background-color: @list-group-bg;
+    border: 1px solid @list-group-border;
+    cursor: pointer;
+    &.item-header {
+      border: 1px solid @list-group-header-bg;
+      font-size: @list-group-header-font;
+      color: @list-group-header-color;
+      background-color: @list-group-header-bg;
+    }
+    &.item-remarkable {
+      border-top: 1px solid @list-group-remarkable-border;
+      border-bottom: 1px solid @list-group-remarkable-border;
+      font-size: @list-group-remarkable-font;
+      color: @list-group-remarkable-color;
+      background-color: @list-group-remarkable-bg;
+    }
+  }
+}

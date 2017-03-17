@@ -1,0 +1,83 @@
+/*
+* @Author: zhaoxuan
+* @Date:   2016-12-15 10:11:06
+* @Last Modified by:   zhaoxuan
+* @Last Modified time: 2016-12-23 14:03:30
+*/
+
+/*当屏幕的宽度小于1200px的时候采用下面的样式进行显示设定版心的宽度并且居中*/
+
+/*楼层的推荐书店或者专场样式的处理*/
+.list-recommand-list {
+    width: 364px;
+    float: left;
+    margin-left: 53px;
+}
+.list-main-title {
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    height: 20px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+.list-main-title span {
+    color: #333;
+}
+.list-main-title span a {
+    font-size: 12px;
+    color: #0d55a5;
+}
+.list-main-title span a:hover {
+    color: #0d55a5;
+}
+.list-recommand-list ul {
+    font-family: "Microsoft YaHei";
+    margin-top: 15px;
+}
+.list-recommand-list ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.list-recommand-list ul li .ico-small-box {
+    display: block;
+    float: left;
+    width: 5px;
+    height: 5px;
+    line-height: 14px;
+    margin-right: 10px;
+    margin-top: 6px;
+    background-color: #cc9977;
+}
+.list-recommand-list ul li .list-book-rank-name {
+    display: inline-block;
+    font-size: 14px;
+    color: #55453d;
+    width: 240px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.price-color {
+    color: #aa8877;
+}
+.list-recommand-list ul li .list-recommand-list-intro {
+    font-size: 12px;
+    color: #999;
+    height: 15px;
+    line-height: 15px;
+    margin-left: 15px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+
+
+/*当屏幕的宽度大于1200px的时候采用下面的样式进行显示*/
+@media screen and (min-width: 1200px) {
+
+}

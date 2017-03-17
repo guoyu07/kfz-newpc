@@ -1,0 +1,21 @@
+.three-column-box {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: justify;
+}
+.three-column-box a {
+	display: inline-block;
+	width: 314px;
+}
+.three-column-box a img {
+	width: 100%;
+}
+@media (min-width: 1200px) {
+    .three-column-box {
+		width: 1200px;
+		margin: 0 auto;
+	}
+	.three-column-box a {
+		width: 380px;
+	}
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>widget调试预览</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php if (!empty($cssDeps)): ?>
+            <?php if (is_array($cssDeps)): ?>
+                <?php foreach ($cssDeps as $css): ?>
+                    <?php if (preg_match('#\.less$#', $css)): ?>
+                        <?= \kongfz\Html::compileLess($css, [APP_PATH]) ?>
+                    <?php else: ?>
+                        <?= \kongfz\Html::tagCss($css) ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        <?php endif; ?>
+    </head>
+    <body>
+        <div><?= $_CONTENT_ ?></div>
+        <?php if (!empty($jsDeps)): ?>
+            <?php if (is_array($jsDeps)): ?>
+                <?php foreach ($jsDeps as $js): ?>
+                    <?= \kongfz\Html::tagJs($js) ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        <?php endif; ?>
+    </body>
+</html>
+

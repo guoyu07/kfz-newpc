@@ -1,0 +1,190 @@
+#!/bin/bash
+
+# 初始化变量
+project_dir=$(dirname `readlink -f $0`)
+project_name=$(basename $project_dir)
+
+command=$1
+if [ $# -lt 1 ];
+then
+        command=""
+fi
+
+start() {
+    cd $project_dir
+    npm config set bin-links false
+    #npm install --no-bin-links gulp
+    #npm install gulp
+    #npm install node-sass
+    #npm install gulp-sass
+    #npm install gulp-less
+    #npm install gulp-concat
+    #npm install gulp-cssmin
+    #npm install gulp-uglify
+    #npm install gulp-md5-plus
+    #npm install gulp.spritesmith
+    #npm install gulp-watch
+    npm install
+    gulp clear watch &
+}
+
+widget() {
+    local name=""
+    if [ $# -lt 1 ];
+    then
+         echo "请输入模块名称, 格式为'nav/top', 其中'nav'表示模块类型, 'top'标识模块名"
+         read name
+    else
+        name=$1
+    fi
+    widgetType=`echo $name |awk -F'/' '{print $1}'`
+    widgetName=`echo $name |awk -F'/' '{print $2}'`
+    if [ -z $widgetName ]; then
+        echo "模块名称格式错误, 正确的格式为'nav/top', 其中'nav'表示模块类型, 'top'标识模块名"
+        exit 1
+    fi
+    if [ -f $project_dir/src/widgets/$widgetType/$widgetName ]; then
+        echo "模块$widgetType/$widgetName目录已经存在, 无法创建此模块 "
+        exit 1
+    fi
+    
+    #创建模块目录
+    mkdir -p $project_dir/src/widgets/$widgetType/$widgetName
+    #创建模块html文件
+    touch $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.html
+    #创建模块phtml文件
+    touch $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.phtml
+    #创建模块css文件
+    touch $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.css
+    #创建模块js文件
+    touch $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.js
+    #创建模块json文件
+    touch $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.json
+    #创建模块README.md文件
+    touch $project_dir/src/widgets/$widgetType/$widgetName/README.md
+
+    #写入${widgetType}.js内容
+    cat <<EOF | sed "s/{widgetType}/$widgetType/g" | sed "s/{widgetName}/$widgetName/g" > $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.js
+(function (root, factory) {
+    var id = '{widgetType}/{widgetName}/{widgetType}';
+    //项目所有自定义模块都放在widgets对象下
+    root.widgets || (root.widgets = {});
+    if (typeof define === 'function' && define.amd) {
+        // AMD. 注册模块
+        //如果不需要将此模块暴露在widgets下，可使用如下写法
+        //define('widgets/' + id, ['libs/jQuery'], factory);
+        //如果想要将此模块暴露在全局变量widgets下
+        define('widgets/' + id, ['libs/jQuery'], function ($) {
+            //如果想要将此模块暴露在全局变量widgets下
+            return (root.widgets[id] = factory($));
+        });
+    } else {
+        //如果不需要将此模块暴露在widgets下，可使用如下写法
+        //factory(root.jQuery);
+        //如果想要将此模块暴露在全局变量widgets下
+        root.widgets[id] = factory(root.jQuery);
+    }
+}(this, function ($) {
+    //TODO 在此编写模块js代码, 注意, 不要忘了 return
+
+
+}));
+EOF
+
+    #写入${widgetType}.json默认内容
+    cat <<EOF | sed "s/{widgetType}/$widgetType/g" | sed "s/{widgetName}/$widgetName/g" > $project_dir/src/widgets/$widgetType/$widgetName/${widgetType}.json
+{
+    "name": "{widgetType}/{widgetName}",
+    "type": "widget",
+    "description": "",
+    "version": "0.0.1",
+    "author": "",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": [],
+    "jsDeps": [],
+    "cssDeps": []
+}
+EOF
+
+    #写入README.md默认内容
+    cat <<EOF | sed "s/{widgetType}/$widgetType/g" | sed "s/{widgetName}/$widgetName/g" > $project_dir/src/widgets/$widgetType/$widgetName/README.md
+# {widgetType}/{widgetName}
+
+{widgetType}/{widgetName} 模块说明
+
+标题|内容
+----|----
+作者|-
+版本|-
+类型|-
+支持布局|-
+依赖模块|-
+模块简介|-
+
+## 示例
+<!--example|DO NOT CHANGE!-->
+
+## 属性
+
+### {属性名}
+
+- 类型：{类型}
+- 必选项：{是|否}
+- 默认值：{默认值}
+- 说明：{说明}
+
+## 函数
+
+### {函数名}
+
+- 说明：{说明}
+- 参数：{有|无}
+	参数名|类型|必选项|默认值|说明
+	----|----|----|----|----
+	-   |-   |-   |-   |-
+
+
+## 注意事项
+
+
+EOF
+
+}
+
+project_chown() {
+    local user=$(ls -l -d $project_dir|awk '{print $3}')
+    local group=$(ls -l -d $project_dir|awk '{print $3}')
+    chown $user:$group -R $project_dir/application
+    chown $user:$group -R $project_dir/build
+    chown $user:$group -R $project_dir/webroot
+}
+
+case $command in
+    "start")
+        $@
+        ;;
+    "widget")
+        $@
+        ;;
+    "chown")
+        project_chown
+        ;;
+    "help"|"-h")
+        echo "start     启动项目自动构建"
+        echo "widget    创建前端模块"
+        echo "chown     统一项目文件权限"
+        echo "          示例:widget nav/top"
+        echo "help|-h   查看帮助信息"
+        ;;
+    *)  #不认识的参数
+        echo "unkonw argument $command, accept 'start', 'widget', 'chown', 'help', '-h'"
+        exit 1
+        ;;
+esac
+
+

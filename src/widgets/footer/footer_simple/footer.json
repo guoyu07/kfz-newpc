@@ -1,0 +1,12 @@
+{
+    "name": "footer/footer_simple",
+    "type": "widget",
+    "description": "二级首页简易公共底部模块",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

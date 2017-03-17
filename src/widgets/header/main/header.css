@@ -1,0 +1,31 @@
+.head_bg{ background:#f3f0e9; height:100px; width:100%; zoom:1;}
+.logo img{ width:278px; margin-top:30px;}
+.logo_right{ float:right;padding-top:15px;}
+.logo_right .search_iput_box{ float:left;width:597px;border:2px solid #8c222c;background:#fff; height:35px; line-height:35px; position:relative;}
+.logo_right .search_big_box .pos{ position:relative; float:left;}
+.logo_right .search_big_box .pos .placeholder{ position:absolute; background:#fff; left:0; top:0; color:#b3b3b3; font-size:12px; line-height:31px;}
+.logo_right .search_big_box .search_iput_box input{ width:560px; height:30px; font-size:12px; line-height:30px;border:none;vertical-align: baseline;}
+.logo_right .search_big_box .search_ico{ display:block; float:left; width:13px; height:14px; margin:9px 5px 0 10px;}
+.logo_right a.search_btn{ float:left;width:97px; height:39px; line-height:39px; color:#fff; text-align:center; background:#8c222c;cursor:pointer; font-size:16px; font-family:"微软雅黑" }
+.logo_right a.search_btn:hover{background:#78000b;}
+.logo_right .lead_tit a{ display:block; float:left; line-height:24px; height:24px; margin-right:10px; position:relative; color:#333;}
+.logo_right .lead_tit a.now{ color:#8c222c; font-weight:bold;}
+.logo_right .lead_tit a span{ display:none;}
+.logo_right .lead_tit a.now span{ display:block; position:absolute; top:21px; left:40%; }
+
+.nav_box ul.left_part{ position:relative; padding-right:20px; margin-right:30px;}
+.nav_box li{ float:left; margin-right:25px; padding:0 15px; font-size:16px; height:58px; line-height:58px;}
+.nav_box li a{ display:block; color:#56453d; font-weight:bold;}
+.nav_box li.line_right{ border-left:1px solid #c8bfbb; height:16px; width:1px; position:absolute; right:0; top:21px; padding:0; margin:0;}
+/*联想弹层*/
+.logo_right .search_iput_box .assBox{ display:block; position:absolute; top:35px; left:0; border:1px solid #e5e5e5; background:#fafafa;width: 595px; padding:5px 0; display:none;}
+.logo_right .search_iput_box .assBox a{ display:block; line-height:20px; color:#333; padding:0 10px;}
+.logo_right .search_iput_box .assBox a:hover{ background:#eee; color:#8c222c;}
+.logo_right .search_iput_box .asstit{ color:#999; padding:0 10px;line-height:22px; }
+.logo_right .search_iput_box .assBox a span.search_del{ display:none;}
+.logo_right .search_iput_box .assBox a:hover span.search_del{ display:block; float:right; color:#8999a9;}
+/*图标*/
+.jiantou_up{ width:8px; height:4px;background:url(../../../sprites/jiantou_up.png) no-repeat 0 0;}
+.search{ display:block; width:12px; height:13px;background:url(../../../sprites/search.png) no-repeat 0 0;}
+.shu1{ display:block; width:13px; height:16px;background:url(../../../sprites/shu1.png) no-repeat 0 0;}
+.shu2{  display:block; width:16px; height:16px;background:url(../../../sprites/shu2.png) no-repeat 0 0;}

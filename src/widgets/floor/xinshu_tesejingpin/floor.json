@@ -1,0 +1,12 @@
+{
+    "name": "floor/xinshu_tesejingpin",
+    "type": "widget",    
+    "description": "新书首页特色精品推荐",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["list/book_change_list","title/main"],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

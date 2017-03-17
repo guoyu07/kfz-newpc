@@ -1,0 +1,60 @@
+<!--楼层的主要内容的推荐商品或者拍品-->
+<div class="gallery-main-list">
+    <p class="gallery-main-title"><span><?= $subTitle1 ?> / <a href="<?= $subMoreLink1 ?>">更多</a></span></p>
+    <div class="gallery-main-product clearfix" style="height: 248px;">
+        <?php
+        for ($i = 0; $i < count($itemId1); $i++) { ?>
+            <span class="gallery-lot-slide">
+                <span class="gallery-book-list-img"><img src="<?= $itemImg1[$i] ?>" alt=""></span>
+                <a href="<?= $site['pm'] . $itemId1[$i] ?>" class="gallery-main-product-text"
+                   title="<?= $itemName1[$i] ?>" target="_blank"><?= $itemName1[$i] ?></a>
+                <p class="gallery-book-time"><?= $remainTime1[$i] ?></p>
+                <p class="gallery-main-product-price"><?php
+                    if ($bidNum1[$i] < 1) { ?>
+                    <span>起拍价</span><i>￥<?= $beginPrice1[$i] ?> </i></p>
+                <?php
+                } else {
+                    ?>
+                    <span>当前价</span><i>￥<?= $maxPrice1[$i] ?> </i></p>
+                    <?php
+                }
+                ?>
+        </span>
+        <?php }
+        ?>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+    </div>
+</div>
+
+<div class="gallery-main-list">
+    <p class="gallery-main-title"><span><?= $subTitle2 ?> / <a href="<?= $subMoreLink2 ?>">更多</a></span></p>
+    <div class="gallery-main-product clearfix" style="height: 248px;">
+        <?php
+        for ($i = 0; $i < count($itemId2); $i++) { ?>
+            <span class="gallery-lot-slide">
+                <span class="gallery-book-list-img"><img src="<?= $itemImg2[$i] ?>" alt=""></span>
+                <a href="<?= $site['pm'] . $itemId2[$i] ?>" class="gallery-main-product-text"
+                   title="<?= $itemName2[$i] ?>" target="_blank"><?= $itemName2[$i] ?></a>
+                <p class="gallery-book-time"><?= $remainTime1[$i] ?></p>
+                <p class="gallery-main-product-price"><?php
+                    if ($bidNum2[$i] < 1) { ?>
+                    <span>起拍价</span><i>￥<?= $beginPrice2[$i] ?> </i></p>
+                <?php
+                } else {
+                    ?>
+                    <span>当前价</span><i>￥<?= $maxPrice2[$i] ?> </i></p>
+                    <?php
+                }
+                ?>
+        </span>
+        <?php }
+        ?>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+        <span class="gallery-lot-slide"></span>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+
+<div class="shopLeftbar">
+    <div class="border_box">
+        <div class="allinfo_box">
+            <div><span class="icon icon-dian m_r15"></span><?= $shopNum ?> 家书店</div>
+            <div class="m_t5"><span class="icon icon-tan m_r15"></span><?= $tanNum ?> 家书摊</div>
+            <div class="m_t5"><span class="icon icon-shu m_r15"></span><?= $bookNum ?> 种图书</div>
+        </div>
+        <!--分类-->
+        <div class="fenlei_box m_t60">
+            <h3>分类</h3>
+            <ul class="list">
+                <li><a href="#">小说</a></li>
+                <li><a href="#">文学</a></li>
+                <li><a href="#">历史</a></li>
+                <li><a href="#">医学</a></li>
+                <li><a href="#">天文</a></li>
+                <li><a href="#">地理</a></li>
+                <li><a href="#">历史</a></li>
+                <li><a href="#">经济</a></li>
+            </ul>
+        </div>
+        <!--销量排行榜-->
+        <div class="m_t50">
+            <h3>销量排行榜 <span class="line">/</span> <a href="#">更多</a></h3>
+            <div id="changeTitle" class="change_title_box clearfix">
+                <a href="javascript:;" class="now">24小时<span class="jt_up"><span class="icon icon-jt_up"></span></span></a>
+                <a href="javascript:;">7天<span class="jt_up"><span class="icon icon-jt_up"></span></span></a>
+                <a href="javascript:;">30天<span class="jt_up"><span class="icon icon-jt_up"></span></span></a>
+            </div>
+            <div id="changeTitleTxt" class="change_text m_t10">
+                <ul>
+                    <?php
+                    $i = 1;
+                    foreach ($saleTop10ByDay as $item) {
+                        if ($i <= 3) { ?>
+                            <li><span class="w_num pull-left c_red"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li><span class="w_num pull-left"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        }
+                        $i++;
+                    }
+                    ?>
+                </ul>
+                <ul style="display:none;">
+                    <?php
+                    $i = 1;
+                    foreach ($saleTop10ByWeek as $item) {
+                        if ($i <= 3) { ?>
+                            <li><span class="w_num pull-left c_red"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li><span class="w_num pull-left"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        }
+                        $i++;
+                    }
+                    ?>
+                </ul>
+                <ul style="display:none;">
+                    <?php
+                    $i = 1;
+                    foreach ($saleTop10ByMonth as $item) {
+                        if ($i <= 3) { ?>
+                            <li><span class="w_num pull-left c_red"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li><span class="w_num pull-left"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        }
+                        $i++;
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <!--综合排行榜-->
+        <div class="m_t50">
+            <h3>综合排行榜 <span class="line">/</span> <a href="#">更多</a></h3>
+            <div class="change_text m_t10">
+                <ul>
+                    <?php
+                    $i = 1;
+                    foreach ($total as $item) {
+                        if ($i <= 3) { ?>
+                            <li><span class="w_num pull-left c_red"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        } else {
+                            ?>
+                            <li><span class="w_num pull-left"><?= $i ?>.</span><span class="text_box"><a
+                                            href="<?= $site['shop'] . $item['shopId'] ?>"><?= $item['shopName'] ?></a></span>
+                            </li>
+                            <?php
+                        }
+                        $i++;
+                    }
+                    ?>
+
+                </ul>
+            </div>
+        </div>
+        <!--书店联盟-->
+        <div class="lm_box m_t50">
+            <h3>书店联盟</h3>
+            <ul class="list">
+                <?php
+                foreach ($areaStatic as $item) { ?>
+                    <li><a href="#"><span class="pull-right"><?= $item['shopCount'] ?></span><?= $item['simple'] ?></a>
+                    </li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </div>
+        <div class="change_fixed"></div>
+    </div>
+</div>

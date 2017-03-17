@@ -1,0 +1,16 @@
+{
+    "name": "floor/index_mingguo",
+    "type": "widget",
+    "description": "",
+    "version": "0.0.1",
+    "author": "",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": ["list/shop","gallery/mingguo"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}

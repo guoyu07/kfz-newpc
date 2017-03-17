@@ -1,0 +1,13 @@
+.projectKnowledge
+.sass-cache
+.project.sh
+*.project
+.idea
+nbproject
+node_modules
+npm-debug.log
+build
+webroot
+/.buildpath
+.vscode
+.settings

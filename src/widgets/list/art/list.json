@@ -1,0 +1,16 @@
+{
+    "name": "list/art",
+    "type": "widget",
+    "description": "艺术品推荐",
+    "version": "0.0.1",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

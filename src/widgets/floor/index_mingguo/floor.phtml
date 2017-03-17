@@ -1,0 +1,31 @@
+<div id="moduleId_<?= $parentId ?>" class=" ancient-box">
+    <div class="ancient-title">
+        <!--楼层的大标题名称和链接-->
+        <div class="floor-big-title clearfix">
+            <ul>
+                <span class="floor-big-title-name"><?= $title ?></span>
+                <?php
+                for ($i = 0; $i < count($userId); $i++) { ?>
+                    <li><a href="<?= $site['user'] . $userId[$i] ?>"><?= $nickName[$i] ?></a></li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+    <div class="ancient-left">
+        @@include('widgets/gallery/mingguo/gallery.phtml')
+    </div>
+    <div class="ancient-right">
+        @@include('widgets/list/shop/list.phtml')
+    </div>
+    <div style="clear:both;"></div>
+    <?php if(isset($tonglan) && is_array($tonglan)) { ?>
+    <div class="ancient-ad">
+        <div class="ancient-ad">
+            <!--楼层的底部的广告位-->
+            <div class="content floor-ad"><a href="<?php echo $tonglan['linkUrl']; ?>"><img src="<?php echo $tonglan['prefix'].$tonglan['imgUrl']; ?>" alt="<?php echo $tonglan['firstDesc']; ?>"></a></div>
+        </div>
+    </div>
+    <?php } ?>
+</div>

@@ -1,0 +1,80 @@
+.ancient-box {
+    width: 1000px;
+    margin: 0 auto;
+}
+.ancient-box .ancient-left {
+    float: left;
+    width: 640px;
+}
+.ancient-box .ancient-right {
+    float: left;
+    width: 359px;
+}
+@media only screen and (min-width: 1200px) {
+    .ancient-box {
+        width: 1200px;
+    }
+    .ancient-box .ancient-left {
+        width: 840px;
+    }
+}
+.floor-ad {
+    margin-top: 40px;
+
+}
+.floor-ad img {
+    width: 100%;
+}
+
+/*
+* @Author: zhaoxuan
+* @Date:   2016-12-15 10:11:06
+* @Last Modified by:   zhaoxuan
+* @Last Modified time: 2016-12-23 14:02:43
+*/
+
+/*当屏幕的宽度小于1200px的时候采用下面的样式进行显示设定版心的宽度并且居中*/
+
+
+/*楼层的大标题以及链接的样式处理*/
+.floor-big-title {
+    height: 44px;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.floor-big-title ul {
+    word-break: break-all;
+    white-space: normal;
+    width: 100%;
+}
+.floor-big-title .floor-big-title-name {
+    line-height: 30px;
+    font-size: 30px;
+    font-family: "Microsoft YaHei";
+    color: #333;
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 14px;
+}
+.floor-big-title ul,
+.floor-big-title ul li{
+    display: inline-block;
+}
+.floor-big-title ul li a {
+    display: inline-block;
+    height: 40px;
+    line-height: 45px;
+    padding: 0 5px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #365899;
+}
+.floor-big-title ul li a:hover {
+    color: #365899;
+}
+
+/*当屏幕的宽度大于1200px的时候采用下面的样式进行显示*/
+@media screen and (min-width: 1200px) {
+
+}

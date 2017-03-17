@@ -1,0 +1,47 @@
+<!--书店首页超值低价-->
+<div id="moduleId_<?= $parentId ?>" class=" shop_booklist_lowprice">
+    <div class="clearfix booklist_tit">
+        <h3 class="pull-left"><?= $mainTitle ?></h3>
+        <div id="moreListTit2" class="pull-right more_list">
+            <?php
+            foreach ($subData as $k => $v) {
+                ?>
+                <a href="javascript:" item="<?= $k + 1 ?>" <?= $k + 1 == 1 ? 'class="now"' : '' ?>><?= $v['title'] ?>
+                    <span class="jt_up2"><span
+                                class="icon icon-jt_up2"></span></span></a>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+    <!--书列表-->
+    <div id="bookList2" class="book_list m_t25">
+        <?php
+        foreach ($subData as $k => $v) {
+            ?>
+            <div class="booklist_box booklist_item<?= $k + 1 ?>" <?= $k + 1 == 1 ? '' : 'style="display:none;"' ?>>
+                <ul class="clearfix">
+                    <?php
+                    foreach ($v['data'] as $data) { ?>
+                        <li>
+                            <div class="pic"><a
+                                        href="<?= $site['book'] . $data['shopId'] . '/' . $data['itemId'] ?>"
+                                        target="_blank"><img
+                                            src="<?= $site['img'] . $data['imgUrl'] ?>"/></a></div>
+                            <div class="book_name"><a
+                                        href="<?= $site['book'] . $data['shopId'] . '/' . $data['itemId'] ?>"
+                                        target="_blank"
+                                        title="<?= $data['itemName'] ?>"><?= $data['itemName'] ?></a></div>
+                            <div class="price">¥<?= $data['price'] ?></div>
+                        </li>
+                    <?php }
+                    ?>
+                </ul>
+                <div class="look_more clearfix"><a href="#" class="pull-right">........................更多</a></div>
+            </div>
+
+            <?php
+        }
+        ?>
+    </div>
+</div>

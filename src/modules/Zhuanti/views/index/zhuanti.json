@@ -1,0 +1,13 @@
+{
+    "name": "index/zhuanti",
+    "module": "zhuanti",
+    "type": "page",
+    "description": "新书专题",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["nav/top","header/main","floor/zhuanti_list","footer/footer_simple"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}

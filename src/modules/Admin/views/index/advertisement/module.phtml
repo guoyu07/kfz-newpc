@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运营后台</title>
+    <!-- build:head-css -->
+    <!-- endbuild -->
+</head>
+<body>
+<input type="hidden" id="moduleId" value="<?=$moduleId?>">
+<div id="wrapper">
+    <!-- Navigation -->
+    <?php include APP_PATH . '/application/modules/Admin/views/common/nav.phtml'?>
+</div>
+<div id="page-wrapper">
+    <div class="sub-nav">
+        <label>位置：</label>
+        <span>首页－模块设置</span>
+        <a class="sub-nav-line" href="">去看看线上样式</a>
+        <a class="sub-nav-show btn btn-primary" href="">预览</a>
+    </div>
+    <div class="banner-box">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="/admin/index/advertisementIndex">广告位区</a></li>
+            <li role="presentation" class="active"><a href="javascript:;">模块设置</a></li>
+        </ul>
+
+        <ul class="nav nav-pills nav-justified" id="navPill-tab" role="tablist">
+            <li role="presentation" class="active"><a href="#tab=0">默认图</a></li>
+            <li role="presentation"><a href="#tab=1">报警邮件接收</a></li>
+            <li role="presentation"><a href="#tab=2">报警短信接收</a></li>
+            <li role="presentation"><a href="#tab=3">数据日报接收</a></li>
+        </ul>
+        <ul class="tab-box clearfix">
+           <li class="show">
+                <table id="tt" title="" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+                <!--表格工具栏-->
+                <div style="display:none;" id="toolbar">
+                    <div style="padding: 10px;">
+                        <div class="toolList"><a style="margin-top:-3px;margin-left:2px;" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="module.addData()">新增</a></div>
+                    </div>
+                </div>
+                <!--新增-->
+                <div id="dlg" class="easyui-window" title="新增" data-options="modal:true,shadow:false" style="display:none;width:800px" closed="true">
+                    <form id="fm" style="margin:0;padding:20px 50px 10px">
+                        <div class="dlg-link-box">
+                            <label>广告标题：</label>
+                            <input type="text" id="title" name="title" style="width:200px;line-height:20px;border:1px solid #ccc">
+                        </div>
+                        <div class="dlg-link-box">
+                            <label>广告描述1：</label>
+                            <input type="text" id="firstDesc" name="firstDesc" style="width:200px;line-height:20px;border:1px solid #ccc">
+                        </div>
+                        <div class="dlg-link-box">
+                            <label>广告描述2：</label>
+                            <input type="text" id="secondDesc" name="secondDesc" style="width:200px;line-height:20px;border:1px solid #ccc">
+                        </div>
+                        <div class="dlg-link-box">
+                            <label>点击图片跳转到：</label>
+                            <input id="linkurl" type="text" onkeyup="module.linkurl()" name="linkurl" style="width:200px;line-height:20px;border:1px solid #ccc"><br/>
+                            <label>点击这里验证跳转 ：</label><a target='_blank' href="javascript:;"></a>
+                        </div>
+                        <div class="dlg-default">
+                            <label>排序：</label>
+                            <input id="order" class="easyui-numberspinner" value="1" data-options="min:1" style="width:100px;">
+                        </div>
+                        <div id="dlg-buttons">
+                            <input type="submit" class="easyui-linkbutton" style="width:90px;height: 26px;" value="保存">
+                            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="module.cancle()" style="width:90px">取消</a>
+                        </div>
+                    </form>
+                </div>
+           </li>
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </div>
+</div>
+<!-- build:footer-js -->
+<!-- endbuild -->
+</body>
+</html>

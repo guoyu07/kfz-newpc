@@ -1,0 +1,109 @@
+@charset "utf-8";
+/*全局*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{margin:0;padding:0;}
+body, html, input{font-size:12px;line-height:150%;font-family:tahoma, arial,"微软雅黑","黑体";color:#333;}
+table{border-collapse:collapse;border-spacing:0;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+img{border:0;vertical-align:middle;}
+input,textarea{outline:none;font-family:Arial, Helvetica, sans-serif;}
+pre{white-space:pre-wrap;/* css-3 */white-space:-moz-pre-wrap;/* Mozilla, since 1999 */white-space:-pre-wrap;/* Opera 4-6 */white-space:-o-pre-wrap;/* Opera 7 */word-wrap:break-word;/* Internet Explorer 5.5+ */}
+input, label, img, th{vertical-align:middle;}
+address, cite, dfn, em, var{font-style:normal;}
+ul, ol, li{list-style:none;}
+p{word-wrap:break-word;}
+a{text-decoration:none;color:#004499;}
+a:hover{color:#ff6600;text-decoration:none;}
+.fb, strong{font-weight:bold;}
+.white, .white a, a.white{color:#fff!important;}
+.blue, .blue a, a.blue{color:#004499!important;}
+.blue_gray{ color:#99a7b4!important;}
+.red, .red a, a.red{color:#8c222c!important;}
+
+.orange, .orange a, a.orange{color:#bf7f5f!important;}
+.gray9, .gray9 a, a.gray9{color:#999!important;}
+.light_gray, .light_gray a, a.light_gray{color:#ccc;}
+.gray6, .gray6 a, a.gray6{color:#666!important;}
+.gray3, .gray3 a, a.gray3{color:#333!important;}
+.green, .green a, a.green{color:#79ae00!important;}
+a.inline,.inline{display:inline-block!important;*display:inline!important;*zoom:1!important;}
+.font14{font-size:14px;}
+.font16{font-size:16px;}
+.font18{font-size:18px;}
+.font20{font-size:20px;}
+.font24{font-size:24px;}
+/*绝对清除浮动*/
+.clearfix, .content{*zoom:1;}
+.clearfix:before, .clearfix:after, .content:after{content:".";display:block;height:0;line-height:0;clear:both;visibility:hidden;}
+.clearfix:after{clear:both;}
+.clear{clear:both;}
+.f_left{float:left;*display:inline;}
+.f_right{float:right;*display:inline;}
+.m_t5{margin-top:5px;}
+.m_t7{margin-top:7px;}
+.m_t8{margin-top:8px;}
+.m_t9{margin-top:9px;}
+.m_t10{margin-top:10px;}
+.m_t12{margin-top:12px;}
+.m_t13{margin-top:13px;}
+.m_t15{margin-top:15px;}
+.m_t18{margin-top:18px;}
+.m_t20{margin-top:20px;}
+.m_t22{margin-top:22px;}
+.m_t25{margin-top:25px;}
+.m_t27{margin-top:27px;}
+.m_t30{margin-top:30px;}
+.m_t40{margin-top:48px;}
+.m_t55{margin-top:55px;}
+.m_r3{margin-right:3px;}
+.m_r5{margin-right:5px;}
+.m_r8{margin-right:8px;}
+.m_r10{margin-right:10px;}
+.m_r15{margin-right:15px;}
+.m_r20{margin-right:20px!important;}
+.m_r25{margin-right:25px;}
+.m_b5{margin-bottom:5px;}
+.m_b10{margin-bottom:10px;}
+.m_b15{margin-bottom:15px;}
+.m_b30{margin-bottom:30px;}
+.m_b60{margin-bottom:60px;}
+.p_r10{padding-right:10px;}
+.m_l3{margin-left:3px;}
+.m_l5{margin-left:5px;}
+.m_l10{margin-left:10px;}
+.m_l15{margin-left:15px;}
+.p_l10{padding-left:10px;}
+.p_b30{padding-bottom:30px;}
+.pd10{padding:10px;}
+
+.hidden{display:none;}
+.line{border-top:1px solid #eee;}
+.line_xu{border-top:1px dotted #dcdcdc;margin:10px;}
+.line_xu1{border-top:1px dotted #dcdcdc;}
+.line_th{text-decoration:line-through;}
+.border{border:1px solid #dcdcdc;padding:10px;overflow:hidden;zoom:1;}
+.border_ec{border:1px solid #ececec;padding:10px;overflow:hidden;zoom:1;}
+.border_nop{border:1px solid #dcdcdc;overflow:hidden;zoom:1;}
+.txt_left{text-align:left;}
+/*右对齐*/
+.txt_right{text-align:right;}
+/*居中对齐*/
+.txt_center{text-align:center;}
+.text_box{ display:block; overflow:hidden; zoom:1;}
+.bg_color{background:#fafafa;}
+.head,.nav, .content, .foot, .wrap{width:1000px;margin:0 auto;}
+.sgbox_g{letter-spacing:-0.31em;/* webkit:collapse white-space between units */*letter-spacing:normal;/* reset IE < 8 */word-spacing:-0.43em;/* IE < 8 && gecko:collapse white-space between units */}
+.sgbox1, .sgbox2{display:inline-block;zoom:1;*display:inline;/* IE < 8:fake inline-block */letter-spacing:normal;word-spacing:normal;vertical-align:top;}
+
+/*输入框颜色*/
+.text_foc{border:1px solid #99ccff!important;}
+.text_err{border:1px solid #cc0000!important;background:#ffefef!important;}
+/**/
+.show{display:block;}
+.show_line{display:inline;}
+.hide{display:none;}
+.loading{height:30px;padding:20px 0;background:url(../img/loading.gif) center center no-repeat;}
+i,em{font-style:normal;}
+.no_record{height:30px;padding:20px 0;}
+@media screen and (min-width: 1200px){
+	.head,.nav, .content, .foot, .wrap{width:1200px;margin:0 auto;}
+	}

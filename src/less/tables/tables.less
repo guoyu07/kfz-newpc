@@ -1,0 +1,149 @@
+//
+// 表格样式
+// --------------------------------------------------
+
+//** 加载混入函数
+@import "mixins.less";
+
+//** 表格基本样式
+table {
+  background-color: @tables-bg;
+}
+//** 表格描述样式
+caption {
+  padding-top: @table-cell-padding;
+  padding-bottom: @table-cell-padding;
+  color: @tables-header-color;
+  text-align: left;
+}
+//** 单元行基本样式
+th {
+  text-align: left;
+}
+//** '.table'类样式、基本表格样式
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: @tables-bottom;
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: @table-cell-padding;
+                line-height: @line-height-base;
+                vertical-align: top;
+                border-top: 1px solid @table-border-color;
+            }
+        }
+    }
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid @table-border-color;
+    }
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {
+                border-top: 0;
+            }
+        }
+    }
+    > tbody + tbody {
+        border-top: 2px solid @table-border-color;
+    }
+    .table {
+        background-color: @tables-bg;
+    }
+}
+//** '.table-bordered'类样式、带边框表格样式
+.table-bordered {
+    border: 1px solid @table-border-color;
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border: 1px solid @table-border-color;
+            }
+        }
+    }
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: 2px;
+        }
+    }
+}
+//** '.table-striped'类样式、条纹背景、
+.table-striped {
+    > tbody > tr:nth-child(odd) {
+        background-color: @table-bg-accent;
+    }
+}
+//** '.table-hover'类样式、鼠标移动变色、
+.table-hover {
+    > tbody > tr:hover {
+        background-color: @table-bg-hover;
+    }
+}
+//** 各状态下的表格
+.table-row-variant(active; @table-bg-active);
+//.table-row-variant(success; @state-success-bg);
+//.table-row-variant(info; @state-info-bg);
+//.table-row-variant(warning; @state-warning-bg);
+//.table-row-variant(danger; @state-danger-bg);
+//** 响应式表格、水平方向小于指定值则出现滚动条
+.table-responsive {
+    overflow-x: auto;
+    min-height: 0.01%; // 兼容问题 Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+    @media screen and (max-width: @table-screen) {
+        width: 100%;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid @table-border-color;
+        > .table {
+            margin-bottom: 0;
+            > thead,
+            > tbody,
+            > tfoot {
+                > tr {
+                    > th,
+                    > td {
+                        white-space: nowrap;
+                    }
+                }   
+            }
+        }
+        > .table-bordered {
+            border: 0;
+            > thead,
+            > tbody,
+            > tfoot {
+                > tr {
+                    > th:first-child,
+                    > td:first-child {
+                        border-left: 0;
+                    }
+                    > th:last-child,
+                    > td:last-child {
+                        border-right: 0;
+                    }
+                }
+            }
+            > tbody,
+            > tfoot {
+                > tr:last-child {
+                    > th,
+                    > td {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

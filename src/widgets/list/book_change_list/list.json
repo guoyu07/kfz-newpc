@@ -1,0 +1,12 @@
+{
+    "name": "list/book_change_list",
+    "type": "widget", 
+    "description": "新书首页图书专题切换列表",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

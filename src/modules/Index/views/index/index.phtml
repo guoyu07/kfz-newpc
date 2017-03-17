@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>【孔夫子网上书店】一家专业的旧书交易平台：网上书店_古旧书_二手书_古籍善本_小人书_特价书_收藏品交易_图书网购</title>
+        <meta name="description" content="孔夫子网上书店：汇集了全国7124家网上书店，展示多达43281025种图书书籍，包含大量极具收藏价值的古旧珍本（明清、民国古籍善本、小人书、珍本期刊、名人墨迹、民国珍本、绝版书等）。孔夫子旧书网为广大书友提供二手图书买卖与收藏品交易市场；开网上书店、二手书交易、网上买书卖书，首选孔夫子旧书网。">
+        <meta name="keywords" content="孔夫子旧书网,网上书店,古旧书,旧书,旧书网,旧书网站,收藏品,古籍善本,旧书店,收藏品,收藏品交易,图书,书籍,杂志,图书网购,小人书,特价书">
+        <!-- build:head-css -->
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--顶部通栏开始-->
+        <?= \kongfz\Widgets::singleton()->widget('nav', 'top') ?>
+        <!--顶部通栏结束-->
+        <!--头部开始-->
+        <?= \kongfz\Widgets::singleton()->widget('header', 'main') ?>
+        <!--头部结束-->
+        <!--banner开始-->
+        <?= \kongfz\Widgets::singleton()->widget('banner', 'full', ['pos' => 'index']) ?>
+        <!--banner结束-->
+        <div class="content clearfix">
+            <div class="content-left f_left">
+                <!--分类开始-->
+                <?= \kongfz\Widgets::singleton()->widget('category', 'main') ?>
+                <!--分类结束-->
+            </div>
+            <div class="content-right">
+                <!--拍卖广告开始-->
+                <?= \kongfz\Widgets::singleton()->widget('ad', 'pmgs') ?>
+                <!--拍卖广告结束-->
+                <!---好书推荐开始-->
+                <?= \kongfz\Widgets::singleton()->widget('gallery', 'book') ?>
+                <!---好书推荐结束-->
+            </div>
+
+        </div>
+        <!---三栏广告开始-->
+        <?= \kongfz\Widgets::singleton()->widget('ad', 'zhuanti') ?>
+        <!---三栏广告结束-->
+
+        <!--楼层开始-->
+        <div class="index-floor">
+            <?= \kongfz\Widgets::singleton()->widget('floor', 'index_xinshu') ?>
+        </div>
+        <div class="index-floor">
+            <?= \kongfz\Widgets::singleton()->widget('floor', 'index_guji') ?>
+        </div>
+        <div class="index-floor index-gray">
+            <?= \kongfz\Widgets::singleton()->widget('floor', 'index_mingguo') ?>
+        </div>
+        <div class="index-floor">
+            <?= \kongfz\Widgets::singleton()->widget('floor', 'index_art') ?>
+        </div>
+        <!--楼层结束-->
+
+        <!--友情链接开始-->
+        <?= \kongfz\Widgets::singleton()->widget('footer', 'friendlink') ?>
+        <!--友情链接结束-->
+
+        <!--底部开始-->
+        <?= \kongfz\Widgets::singleton()->widget('footer', 'main') ?>
+        <!--底部结束-->
+
+        <!-- build:footer-js -->
+        <!-- endbuild -->
+    </body>
+</html>

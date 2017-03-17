@@ -1,0 +1,43 @@
+@look-more-a:#0057a0;
+@look-more-a-hover:#8c222c;
+
+body{ background: #f7f7f6;}
+.height50{ height: 50px;}
+.height30{ height: 30px;}
+.height35{ height: 35px;}
+.content-left {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width:180px;
+    margin-top: 20px;
+}
+.content-right {
+	float: right;
+    width: 790px;
+    margin-top: 20px;
+    .shop_index_banner img{ width: 790px; height: auto;}
+}
+.booklist_tit{
+  border-bottom: 1px solid #ccc;
+  line-height: 48px;
+}
+.booklist_tit.no_bor{ border-bottom: none;}
+.booklist_tit h3 {
+  font-size: 24px;
+}
+.look_more a{ color: @look-more-a;}
+.look_more a:hover{ color: @look-more-a-hover;}
+ @media screen and (min-width: 1200px){
+    .content-right {width: 990px;
+    .shop_index_banner img{ width: 990px;}
+    }
+  
+  };
+@media only screen and (min-width: 1200px){
+    #banner-box .banner-slider {
+        width: 1200px;
+        margin-left: -600px;
+    }
+}

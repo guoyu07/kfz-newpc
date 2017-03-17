@@ -1,0 +1,6 @@
+<div id="moduleId_<?php echo isset($moduleId) ? $moduleId : ''; ?>" class="<?php if(isset($noLine) && $noLine == '1') {echo 'clearfix booklist_tit_big no_bor';} else {echo 'clearfix booklist_tit_big';} ?>">
+       <h3 class="pull-left m_r10"><?php echo isset($mainTitle) ? $mainTitle : ''; ?></h3>
+    <?php if(isset($subTitle) && $subTitle != '') { ?>
+       <div class="pull-left tit_info"> <span class="line_xie m_r10">/</span><?php echo $subTitle; ?></div>
+    <?php } ?>
+</div>

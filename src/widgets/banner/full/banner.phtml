@@ -1,0 +1,39 @@
+<?php if($isHide == '0' && is_array($data) && count($data) > 0) { ?>
+<div id="moduleId_<?php echo $moduleId; ?>">
+<div id="banner-box">
+	<input id="showType" value="<?php echo $showType; ?>" style="display: none;">
+	<input id="count" value="<?php echo count($data); ?>" style="display: none;">
+    <ul class="img-box">
+    <?php foreach ($data as $k => $v) { ?>
+        <li data-color="<?php echo $v['bgcolor']; ?>" ><a href="<?php echo $v['linkUrl']; ?>"><img src="<?php echo $v['prefix'].$v['imgUrl']; ?>" alt="" /></a></li>
+    <?php } ?>
+    </ul>
+    <div class="banner-slider">
+        <div class="banner-slider-right">
+        	<?php if($showType == '1') {?>
+            <!--按钮-->
+            <div id="banner-right-button">
+                <span id="prev-btn"><img src="/img/banner/left.png" alt=""></span>
+                <span id="next-btn"><img src="/img/banner/right.png" alt=""></span>
+                <ul class="slider-nav">
+                	<?php
+                	$len = count($data);
+                	for ($i = 0; $i < $len; $i++) {
+                	?>
+                    <li href="javascript:;"></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <?php } else { ?>
+            <!--文字按钮-->
+            <ul id="banner-right-textButton">
+            	<?php foreach ($data as $k => $v) { ?>
+                <li><a href="<?php echo $v['linkUrl']; ?>"><?php echo mb_substr($v['description'], 0, 8, 'utf-8'); ?></a></li>
+                <?php } ?>
+            </ul>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+</div>
+<?php } ?>

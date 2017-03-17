@@ -1,0 +1,12 @@
+{
+    "name": "floor/xinshu_banner",
+    "type": "widget",    
+    "description": "新书首页三张广告图",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["banner/banner_3pic","title/main"],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

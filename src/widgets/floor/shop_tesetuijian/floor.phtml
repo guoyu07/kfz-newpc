@@ -1,0 +1,34 @@
+<?php if(isset($subData) && !empty($subData) && is_array($subData)) { ?>
+<!--书店首页特色推荐-->
+    <div id="moduleId_<?= $parentId ?>" class=" shop_booklist1">
+   <div class="clearfix booklist_tit">
+       <h3 class="pull-left"><?php echo $mainTitle; ?></h3>
+       <?php if(!empty($subData) && is_array($subData) && $subData[0]['title'] != '' && count($subData) > 1) { ?>
+       <div id="moreListTit" class="pull-right more_list">
+               <?php foreach ($subData as $k => $v) { ?>
+                   <a href="javascript:;" target="_blank" item="<?php echo $k+1;?>" class="<?php if($k == 0) {if(mb_strlen($v['title'], 'UTF8') == '2') {echo 'now two_words';} else {echo 'now';}} else if(mb_strlen($v['title'], 'UTF8') == '2') {echo 'two_words';} else {echo '';} ?>"><?php echo $v['title']; ?><span class="jt_up2"><span class="icon icon-jt_up2"></span></span></a>
+           <?php } ?>
+       </div>
+       <?php } ?>
+    </div>
+    <!--书列表-->
+    <div id="bookList" class="book_list m_t25">
+        <?php if(!empty($subData) && is_array($subData)) {?>
+            <?php foreach ($subData as $key => $val) { ?>
+        <div class="<?php echo 'booklist_box booklist_item'.($key+1); ?>" <?php if($key > 0) {echo "style='display:none;'";} ?>>
+            <ul class="clearfix ">
+                <?php foreach ($val['data'] as $k => $v) { ?>
+                <li>
+                    <div class="pic"><a href="<?php echo $site['book'].$v['shopId'].'/'.$v['itemId']; ?>" target="_blank"><img src="<?php echo str_replace('_s', '_n', $v['imgSrc']); ?>"/></a></div>
+                    <div class="book_name"><a href="<?php echo $site['book'].$v['shopId'].'/'.$v['itemId']; ?>" target="_blank" title=""><?php echo $v['itemName']; ?></a></div>
+                    <div class="shop_name"><a href="<?php echo $site['shop'].$v['shopId']; ?>" target="_blank"><?php echo $v['shopName']; ?></a></div>
+                    <div class="price">¥<?php echo $v['price']; ?></div>
+                </li>
+                <?php } ?>
+            </ul>
+            <div class="look_more clearfix"><a href="<?php echo $moreUrl; ?>" target="_blank" class="pull-right">........................更多</a></div>
+        </div>
+        <?php }} ?>
+    </div>
+</div>
+<?php } ?>

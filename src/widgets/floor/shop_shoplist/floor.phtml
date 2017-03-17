@@ -1,0 +1,90 @@
+<!--书店首页旧书店，有故事-->
+<div id="moduleId_<?= $parentId ?>" class=" shop_shoplist">
+    <div class="clearfix booklist_tit">
+        <h3 class="pull-left"><?= $mainTitle ?></h3>
+        <div id="moreListTit3" class="pull-right more_list">
+            <?php
+            foreach ($subData as $k => $v) {
+                if (count($subData) == 1) {
+                    break;
+                } ?>
+                <a href="javascript:;" item="<?= $k + 1 ?>" <?php
+                $classStr = '';
+                if ($k + 1 == 1) {
+                    $classStr = 'class="now"';
+                    if (mb_strlen($v['title'], 'UTF8') == '2') {
+                        $classStr = 'class="now two_words"';
+                    }
+                } elseif (mb_strlen($v['title'], 'UTF8') == '2') {
+                    $classStr = 'two_words';
+                } else {
+                    $classStr = '';
+                }
+                echo $classStr
+                ?>><?= $v['title'] ?>
+                    <span class="jt_up2"><span
+                                class="icon icon-jt_up2"></span></span></a>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+    <!--书店铺列表-->
+    <div id="shop_shoplist" class="m_t25">
+        <?php
+        foreach ($subData as $k => $v) { ?>
+            <div class="shoplist_box shoplist_item<?= $k + 1 ?> clearfix" <?= $k + 1 == 1 ? '' : 'style="display:none;"' ?>>
+                <?php
+                foreach ($v['data'] as $shopInfo) { ?>
+                    <ul class="clearfix">
+                        <li class="pull-left shop_name_box">
+                            <a href="<?= $site['shop'] . $shopInfo['shopId'] ?>" class="shop_name_box_a"
+                               target="_blank">
+                                <div class="name"><?= $shopInfo['shopName'] ?></div>
+                                <div class="good m_t15">好评率<?= $shopInfo['goodRate'] ?></div>
+                                <span class="btn btn_yellow_100_32 m_t30">进店逛逛</span>
+                            </a>
+                        </li>
+                        <li class="pull-right shop_name_list ">
+                            <?php
+                            foreach ($shopInfo['itemArr'] as $k => $v) { ?>
+                                <a href="<?= $v['url'] ?>" <?php if ($k == 0) echo 'class="now"';
+                                if ($k == 4) echo 'class="last"'; ?> target="_blank"
+                                   title="<?= $v['itemName'] ?>"><?= $v['itemName'] ?></a>
+                                <?php
+                            }
+                            ?>
+                        </li>
+                        <li class="text_box">
+                            <?php
+                            foreach ($shopInfo['itemArr'] as $k => $v) { ?>
+                                <div class="shop_book shop_book_item<?= $k + 1 ?>" <?= $k == 0 ? '' : 'style="display:none;"' ?>>
+                                    <div class="shoplist_img_box">
+                                        <a href="<?= $v['url'] ?>" target="_blank"><img
+                                                    src="<?= $v['smallImg'] ?>"/></a>
+                                    </div>
+                                    <div class="shoplist_txt">
+                                        <p class="name_box"><a href="<?= $v['url'] ?>"
+                                                               target="_blank"
+                                                               title="<?= $v['itemName'] ?>"><?= $v['itemName'] ?></a>
+                                        </p>
+                                        <p class="m_t10">分类： <a href="#" class="c_gray6"><?= $v['cateName'] ?></a></p>
+                                        <p>品相：<?= $v['quality'] ?></p>
+                                        <div class="price">¥<?= $v['price'] ?></div>
+                                    </div>
+                                </div>
+                            <?php }
+                            ?>
+                        </li>
+                    </ul>
+                    <?php
+                }
+                ?>
+
+                <div class="text-center nomore_box">没有更多了</div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+</div>

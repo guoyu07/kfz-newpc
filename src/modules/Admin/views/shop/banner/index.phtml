@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运营后台</title>
+    <!-- build:head-css -->
+    <!-- endbuild -->
+</head>
+<body>
+<input type="hidden" id="moduleId" value="<?=$moduleId?>">
+<div id="wrapper">
+    <!-- Navigation -->
+    <?php include APP_PATH . '/application/modules/Admin/views/common/nav.phtml'?>
+</div>
+<div id="page-wrapper">
+    <div class="sub-nav">
+        <label>位置：</label>
+        <span>首页－模块设置</span>
+        <a class="sub-nav-line" href="">去看看线上样式</a>
+        <a class="sub-nav-show btn btn-primary" href="">预览</a>
+    </div>
+    <div class="banner-box">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="javascript:;">轮播图池子</a></li>
+            <li role="presentation"><a href="/admin/shop/bannerModule">模块设置</a></li>
+        </ul>
+        <!--是否显示模块-->
+        <div class="banner-showType">
+            <label><h4>是否显示模块：</h4></label>
+            <span id="banner-showType-val" style="margin-right:10px;">显示</span>
+            <div class="btn btn-default" onclick="$('#showType').window('open')">修改</div>
+        </div>
+        <div id="showType" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save'" style="display:none;width:500px;height:160px;padding:10px;">
+            <div data-options="region:'center'" style="padding:10px;">
+                <div class="banner-choose-box" id="banner-choose-box">
+                    <label>模式设置：</label>
+                    <input id="tuwen" name="showType" type="radio" onclick="banner.showType('0')"><span>显示</span>
+                    <input id="tu" name="showType" type="radio" onclick="banner.showType('1')"><span>隐藏</span>
+                </div>
+            </div>
+            <div data-options="region:'south',border:false" style="text-align:right;padding:5px 10px 5px 10px;">
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="banner.typeSave()" style="width:80px">确定</a>
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#showType').window('close')" style="width:80px">取消</a>
+            </div>
+        </div>
+        <!--图文选择-->
+        <div class="banner-choose" id="banner-choose">
+            <label><h4>前台显示模式：</h4></label>
+            <span id="banner-choose-val" style="margin-right:10px;">图文轮播</span>
+            <div class="btn btn-default" onclick="$('#w').window('open')">修改</div>
+        </div>
+        <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save'" style="display:none;width:500px;height:160px;padding:10px;">
+            <div data-options="region:'center'" style="padding:10px;">
+                <div class="banner-choose-box" id="banner-choose-box">
+                    <label>模式设置：</label>
+                    <input id="tuwen" name="lunbo" type="radio" onclick="banner.choose('1')"><span>纯图轮播</span>
+                    <input id="tu" name="lunbo" type="radio" onclick="banner.choose('0')"><span>图文轮播</span>
+                </div>
+            </div>
+            <div data-options="region:'south',border:false" style="text-align:right;padding:5px 10px 5px 10px;">
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="banner.save()" style="width:80px">确定</a>
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#w').window('close')" style="width:80px">取消</a>
+            </div>
+        </div>
+        <!--表格设置-->
+        <table id="tt" title="" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+        <!--表格工具栏-->
+        <div style="display:none;" id="toolbar">
+            <div style="padding: 10px;">
+                <div class="toolList"><a style="margin-top:-3px;margin-left:2px;" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="banner.newUser()">新增</a></div>
+                <div class="toolList">状态:<input id="zt" class="easyui-combobox" name="state" style="width:160px;"></div>           
+                <div class="toolList">搜索:<input id="searchbox" class="easyui-searchbox" data-options="prompt:'Please Input Value',searcher:banner.doSearch" style="width:160px;"></div>
+            </div>
+            <div style="padding: 10px;border-top:1px solid #eee;">
+                <div class="toolList">定时发布:<input id="dsfb" class="easyui-combobox" name="state" style="width:160px;"></div>
+                <div class="toolList">定时结束:<input id="dsjs" class="easyui-combobox" name="state" style="width:160px;"></div>
+            </div>
+        </div>
+        <!--新增-->
+        <div id="dlg" class="easyui-window" title="新增" data-options="modal:true,shadow:false" style="display:none;width:800px" closed="true">
+            <div class="clearfix" style="margin:0 50px;margin-top:10px;padding-bottom:10px;border-bottom:1px solid #ccc">
+                <div class="pull-left" style="width: 50%">
+                    <!--dom结构部分-->
+                    <div id="uploader-demo">
+                        <!--用来存放item-->
+                        <div id="fileList" class="uploader-list"></div>
+                        <div id="filePicker"></div>
+                    </div>
+                </div>
+                <div class="pull-right" style="width: 50%;">              
+                    <div class="input-group" style="margin-top:10px;">
+                        <input id="searchName" type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick="banner.linkSearch()">抓取图片!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <form id="fm" style="margin:0;padding:20px 50px 10px">
+                <div class="dlg-img-box clearfix">
+                    <div class="dlg-img-box-left">
+                        <div class="dlg-wrapper">
+                            <img id="element_id" src="">
+                            <div id="loading-center-absolute">
+                                <div class="object" id="object_one"></div>
+                                <div class="object" id="object_two"></div>
+                                <div class="object" id="object_three"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dlg-img-box-right">
+                        <div class="dlg-wrapper-small">
+                            <img class="jcrop-preview" src="" alt="Preview">
+                        </div>
+                        <div id="dlg-tailor" class="btn btn-info" style="margin-top:24px;">裁剪</div>
+                    </div>
+                </div>
+                <div class="dlg-color-box">
+                    <label>背景色值：</label>
+                    <input type="text" name="bgcolor" class="dlg-color-input" style="width:100px;line-height:20px;border:1px solid #ccc">
+                    <span class="dlg-color-bg"></span>
+                    <input type="color" class="dlg-color-choose">
+                </div>
+                <div class="dlg-link-box">
+                    <label>点击图片跳转到：</label>
+                    <input id="linkurl" type="text" onkeyup="banner.linkurl()" name="linkurl" style="width:200px;line-height:20px;border:1px solid #ccc"><br/>
+                    <label>点击这里验证跳转 ：</label><a target='_blank' href="javascript:;"></a>
+                </div>
+                <div class="dlg-address-box">
+                    <label>图文轮播－文本：</label>
+                    <input type="text" id="description" name="description" style="width:200px;line-height:20px;border:1px solid #ccc"><br/>
+                    <span>前台最多可显示前11个字</span>
+                </div>
+                <div class="dlg-start-time">
+                    <label>发布时间设置：</label>
+                    <input id="dlg-start-time" class="easyui-combobox">
+                    <input class="easyui-datetimebox" disabled="true" style="width:200px;">
+                </div>
+                <div class="dlg-end-time">
+                    <label>结束时间设置：</label>
+                    <input id="dlg-end-time" class="easyui-combobox">
+                    <input class="easyui-datetimebox" disabled="true" style="width:200px;">
+                </div>
+                <div class="dlg-default">
+                    <label>排序：</label>
+                    <input id="order" class="easyui-numberspinner" value="1" data-options="min:1" style="width:100px;">
+                </div>
+                <div id="dlg-buttons">
+                    <input type="submit" class="easyui-linkbutton" style="width:90px;height: 26px;" value="保存">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="banner.cancle()" style="width:90px">取消</a>
+                </div>
+            </form>
+        </div>
+        <!--排序框-->
+        <div id="editOrder" class="easyui-window" title="排序" data-options="modal:true,shadow:false,closed:true,iconCls:'icon-save'" style="display:none;width:300px;height:150px;padding:5px;">
+             <div data-options="region:'center'" style="padding:10px;">
+                <div style="margin:10px 0;">
+                    <label>排序：</label><input id="orderIndex" class="easyui-numberspinner" value="1" data-options="min:1" style="width:150px;">
+                </div>
+                <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
+                    <a id="editOrderBtn" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="banner.editOrderClick()" style="width:80px">确定</a>
+                    <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#editOrder').window('close')" style="width:80px">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- build:footer-js -->
+<!-- endbuild -->
+</body>
+</html>

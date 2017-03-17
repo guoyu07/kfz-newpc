@@ -1,0 +1,54 @@
+/*引入公共变量*/
+@import "src/less/variables.less";
+
+@zhuanti-li-bg:  #fff;
+@bt-color:#333;
+@bt-color-hover:#8c222c;
+@info-color:#666;
+@info-size:12px;
+@info-more:#666;
+@info-more-hover:#333;
+
+body{ background: #f7f7f6;}
+.zhuanti_list_box{
+  width:1000px;
+  
+
+   ul{margin-right: -29px; margin-top: 20px;}
+   ul li{ float: left; width: 314px; background: @zhuanti-li-bg; margin-right: 29px; margin-bottom: 57px; line-height: 18px; word-break:break-all;}
+   ul li a{ display: block;}
+   ul li a .pic{ display: block; width: 314px; height: 190px; text-align: center;}
+   ul li a .pic img{width: 314px; }
+   ul li a .txt_box{ padding: 13px 16px;}
+   ul li a .txt_box .bt{color: @bt-color;}
+   ul li a .txt_box .info{ font-size:@info-size; color: @info-color; height: 54px; overflow: hidden; margin-top: 10px;}
+   ul li a .txt_box .info p{ display: block; width: 100%;}
+   ul li a .txt_box .info_more{color: @info-more; font-size:@info-size; margin-top: 10px;}
+   ul li a:hover{ box-shadow: 0 0 13px 4px #ececeb;}
+   ul li a:hover .bt{color: @bt-color-hover;}
+   ul li a:hover .info_more{color: @info-more-hover;}
+
+   .booklist_tit{border-bottom: 1px solid #ccc;line-height: 48px;}
+   .booklist_tit.no_bor{ border-bottom: none;}
+   .booklist_tit h3 {font-size: 24px;}
+    //分页
+    .page_box{ text-align: center;}
+    .box_border{ display: inline-block;border: 1px solid #e5e5e5; border-right:none;}
+    .page_box a,.page_box span{ display: block; float: left; border-right: 1px solid #e5e5e5; color: #999; width: 36px; line-height: 36px; text-align: center;}
+    .page_box a:hover,.page_box a.now{ background: #8c222c; color: #fff;}
+    @media screen and (min-width: 1200px){
+      width: 1200px;
+      ul{margin-right: -129px;}
+      ul li{margin-right: 129px;}
+        
+	};
+  }
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+{
+    "name": "ad/pmgs",
+    "type": "widget",
+    "description": "首页拍卖广告模块",
+    "version": "1.0.0",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "lichenglong",
+            "email": "lichenglong@kongfz.com"
+        }
+    ],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less","css/grid.css"]
+}

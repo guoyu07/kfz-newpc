@@ -1,0 +1,8 @@
+<div class="banner_3pic">
+    <ul class="clearfix">
+        <?php if(!empty($data) && is_array($data)) { ?>
+        <?php foreach ($data as $k => $v) { ?>
+            <li><a href="<?php echo $v['linkUrl']; ?>" target="_blank"><img src="<?php echo $v['prefix'].$v['imgUrl']; ?>"/></a></li>
+        <?php }} ?>
+    </ul>
+</div>

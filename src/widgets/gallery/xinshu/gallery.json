@@ -1,0 +1,16 @@
+{
+    "name": "gallery/xinshu",
+    "type": "widget",
+    "description": "",
+    "version": "0.0.1",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

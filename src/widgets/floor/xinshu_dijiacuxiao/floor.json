@@ -1,0 +1,12 @@
+{
+    "name": "floor/xinshu_dijiacuxiao",
+    "type": "widget",    
+    "description": "书店首页图片130px的列表",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["gallery/book_list_pic130","title/main"],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

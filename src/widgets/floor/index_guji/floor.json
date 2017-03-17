@@ -1,0 +1,17 @@
+{
+    "name": "floor/index_guji",
+    "type": "widget",
+    "description": "古籍",
+    "version": "0.0.1",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": ["list/shop","gallery/lot"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}
+

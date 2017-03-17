@@ -1,0 +1,83 @@
+﻿.top_bar{ background:#8c222c; height:36px; line-height:36px; color:#edddde; width:100%;zoom:1;position: relative;z-index: 1;}
+.top_user_box{ float:right;}
+.top_bar ul{ text-align:right;}
+.top_bar li{ display:block; float:left;padding:0 10px; text-align:center; position:relative;}
+.top_bar li a{ color:#fff;}
+
+.top_bar li.w_58{ width:58px;}
+
+.top_bar li .tan_box{ position:absolute; left:0; top:36px; background:#fff; width:76px; padding:10px 0; text-align:left; border:1px solid #e5e5e5; line-height:26px; color:#333;}
+.top_bar li .tan_box.w_89{ width:89px;}
+.top_bar li .tan_box .bt{ color:#999; border-bottom:1px solid #e5e5e5; line-height:26px; margin:0 7px;}
+.top_bar li .tan_box .bt.m_t8{ margin-top:8px;}
+.top_bar li .tan_box p{ display:block; color:#333;}
+.top_bar li.now .tan_box a{ display:block; color:#333; padding:0 7px;}
+.top_bar li.now .tan_box a:hover{ background:#eee; color:#8c222c; }
+
+.top_bar li .tan_box.cart{ width:298px; padding:12px 10px;}
+.top_bar li.now{ background:#6a000a; height:35px\0;}
+.top_bar li.now a{ color:#fff;}
+.top_bar li.line_white{ padding:0;}
+
+.hasOpenShop,.noOpenShop,.hasOpenPm,.noOpenPm{ display: none;}
+
+.top_bar li .tan_box.full_cart{width:298px;}
+.top_bar li .tan_box.full_cart a.product{ display:block; padding:5px 10px;}
+.top_bar li .tan_box.full_cart a.product:hover{ background:#f5f5f5; color:#8c222c;}
+.top_bar li .tan_box.full_cart .pic img{ width:40px; height:40px; margin-top:2px;}
+.top_bar li .tan_box.full_cart .name{ width:150px; height:36px; line-height:18px;overflow:hidden; word-break:break-all;text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2;}
+.top_bar li .tan_box.full_cart .text_box{ text-align:right; height:40px;}
+.pos{ position:relative;}
+.top_bar li .tan_box.full_cart  span.del{ display:block; position:absolute; top:20px; right:10px; color:#8999a9; cursor:pointer;}
+.top_bar li  .line_gray{ border-top:1px solid #e5e5e5; margin:10px 10px 0 10px;}
+.pd_10{ padding:0 10px;}
+.top_bar li .tan_box.full_cart .more_box a{ display:block; background:#f3f0e9; text-align:center; padding:18px 0; color:#999;}
+.top_bar li .tan_box.full_cart .more_box a:hover{ color:#724d2c;}
+
+.top_bar li .tan_box.kefu_tc{width:248px; padding:0;}
+.top_bar li .tan_box.kefu_tc  a.enter{ display:block; padding:0 10px; margin:4px 0; line-height:22px; color:#cc9977;}
+.top_bar li .tan_box.kefu_tc  a.enter:hover{ background:#eee; color:#8c222c;}
+.top_bar li .tan_box.kefu_tc  a.enter.qq_info{ display:block; padding:5px 10px; color:#666;}
+.top_bar li .tan_box.kefu_tc  a.enter.qq_info:hover{ color:#8c222c}
+.top_bar li .tan_box.kefu_tc  .dianhua_info{ line-height:18px; color:#666; padding-top:4px;}
+
+.top_bar li .tan_box.shouji_tc{width:322px; right:0; left:auto; padding:7px 0 10px 15px;}
+.top_bar li .tan_box.shouji_tc img{ width:150px; height:150px;}
+.top_bar li .tan_box.shouji_tc a{ display:block; padding:0;}
+
+.top_bar li .tan_box.login_tc{width:170px; right:0; left:auto;}
+.top_bar li.now .tan_box.login_tc a{padding:0;}
+
+.top_bar li .tan_box.login_tc .par_box{width:33.3333%; text-align:center; line-height:20px; color:#999;}
+.top_bar li .tan_box.user_tc{width:99px; right:0; left:auto; padding:8px; line-height:22px;}
+.top_bar li .tan_box.user_tc a{ color:#333; padding:0;}
+.top_bar li .tan_box.user_tc a:hover{ background:#fff;}
+.top_bar li .tan_box.user_tc .m_t2{ margin-top:2px;}
+/*图标*/
+.big_cart{ display:inline-block; background:url(../../../sprites/big_cart.png) no-repeat 0 0; vertical-align:middle; width:34px; height:30px;}
+.small_cart{ display:block; float:left; background:url(../../../sprites/small_cart.png) no-repeat 0 0; width:13px; height:12px;}
+.xiala{ display:inline-block; background:url(../../../sprites/xiala.png) no-repeat 0 0; vertical-align:middle; width:5px; height:3px; }
+.rentou{ display:inline-block; background:url(../../../sprites/rentou.png) no-repeat 0 0; vertical-align:middle; width:12px; height:13px;}
+.xiaoxi{ display:inline-block; background:url(../../../sprites/xiaoxi.png) no-repeat 0 0; width:14px; height:12px;}
+.kefu{display:block; float:left;background:url(../../../sprites/kefu.png) no-repeat 0 0;  width:12px; height:12px;}
+.wenhao{display:block; float:left; background:url(../../../sprites/wenhao.png) no-repeat 0 0;  width:12px; height:12px;}
+.dianhua{display:block; float:left;background:url(../../../sprites/dianhua.png) no-repeat 0 0;  width:12px; height:10px;}
+.qq{display:block; float:left;background:url(../../../sprites/qq.png) no-repeat 0 0;  width:12px; height:12px;}
+.big_qq{display:inline-block!important;background:url(../../../sprites/big_qq.png) no-repeat 0 0;  width:36px; height:36px;}
+.weixin{display:inline-block!important;background:url(../../../sprites/weixin.png) no-repeat 0 0;  width:36px; height:36px;}
+.sina{display:inline-block!important;background:url(../../../sprites/sina.png) no-repeat 0 0;  width:36px; height:36px;}
+.user{display:inline-block!important;background:url(../../../sprites/user.png) no-repeat 0 0;  width:36px; height:36px;}
+/*鼠标滑过图标变红*/
+a:hover .kefu{background:url(../../../img/top/kefu_red.png) no-repeat 0 0;}
+a:hover .wenhao{background:url(../../../img/top/wenhao_red.png) no-repeat 0 0;}
+a:hover .dianhua{background:url(../../../img/top/dianhua_red.png) no-repeat 0 0;}
+a:hover .qq{background:url(../../../img/top/qq_red.png) no-repeat 0 0;}
+/*按钮*/
+.top_bar li .tan_box a.btn_red_150_36{ display:inline-block; width:150px; height:36px; line-height:36px; text-align:center; color:#fff; font-size:14px; background:#8c222c; border-radius:2px;}
+.top_bar li .tan_box a.btn_red_150_36:hover,.top_bar li.now .tan_box a.btn_red_115_26:hover,a.btn_white_150_36:hover{ background:#78000b; color:#fff;}
+.top_bar li .tan_box a.btn_red_115_26{display:inline-block; width:115px; height:26px; line-height:26px; text-align:center; color:#fff; background:#8c222c; border-radius:2px;}
+.top_bar li .tan_box a.btn_white_150_30{display:inline-block; width:150px; height:30px; line-height:30px; text-align:center; color:#8c222c; font-size:14px; background:#f3f0e9; border:1px solid #8c222c;border-radius:2px;}
+.top_bar li .tan_box a.btn_white_150_30:hover{ background:#f8f3e8; color:#8c222c; }
+@media screen and (min-width: 1200px){
+
+	}

@@ -1,0 +1,35 @@
+//
+// 按钮样式
+// --------------------------------------------------
+@import "variables.less";
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius:2px;
+}
+.btnmake (@btn-width, @btn-height, @btn-color, @btn-bg,@btn-font-size, @btn-hover-color, @btn-hover-bg){
+    width: @btn-width;
+    height: @btn-height;
+    line-height: @btn-height;
+    color: @btn-color;
+    background-color: @btn-bg;
+    font-size:@btn-font-size;
+    &:hover {
+        color: @btn-hover-color;
+        background-color: @btn-hover-bg;
+    }
+}
+.btn-border(@btn-border-color,@btn-hover-border) {
+    border: 1px solid @btn-border-color; 
+    &:hover{
+        border: 1px solid @btn-hover-border;
+    }
+}
+.btn-mit {
+    .btnmake (150px, 36px, #fff,#8c222c,14px, #fff, #6a000a);
+    .btn-border(#8c222c,#6a000a);
+
+}

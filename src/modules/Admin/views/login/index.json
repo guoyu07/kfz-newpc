@@ -1,0 +1,19 @@
+{
+    "module": "admin",
+    "name": "login/index",
+    "type": "page",
+    "description": "",
+    "version": "0.0.1",
+    "author": "liubang",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "spriteDeps": [],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": []
+
+}

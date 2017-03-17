@@ -1,0 +1,18 @@
+{
+  "module": "admin",
+  "name": "index/zhuanti/module",
+  "type": "page",
+  "description": "",
+  "version": "0.0.1",
+  "author": "lichenglong",
+  "contributors": [
+    {
+      "name": "",
+      "email": ""
+    }
+  ],
+  "spriteDeps": [],
+  "widgetDeps": [],
+  "jsDeps": ["libs/jQuery.js", "libs/easyui/jquery.easyui.min.js","libs/easyui/datagrid-filter.js","libs/bootstrap/js/bootstrap.js","libs/metisMenu/metisMenu.js","modules/Admin/js/nav.js","libs/jcrop/jquery.Jcrop.js","libs/webuploader/webuploader.js","libs/validate/validate.js"],
+  "cssDeps": ["libs/easyui/easyui.css", "libs/easyui/easyui_icon.css","libs/bootstrap/css/bootstrap.css","libs/bootstrap/css/font-awesome.css","libs/metisMenu/metisMenu.css","modules/Admin/css/nav.css","libs/jcrop/jquery.Jcrop.css","libs/webuploader/webuploader.css"]
+}

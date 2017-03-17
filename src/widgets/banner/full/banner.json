@@ -1,0 +1,16 @@
+{
+    "name": "banner/full",
+    "type": "widget",
+    "description": "首页banner模块",
+    "version": "1.0.0",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "lichenglong",
+            "email": "lichenglong@kongfz.com"
+        }
+    ],
+    "widgetDeps": [],
+    "jsDeps": ["libs/jQuery.js","libs/slide/slide.js"],
+    "cssDeps": ["less/bootstrap.less","css/grid.css"]
+}

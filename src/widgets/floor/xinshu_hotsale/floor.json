@@ -1,0 +1,12 @@
+{
+    "name": "floor/xinshu_hotsale",
+    "type": "widget",    
+    "description": "书店首页图片108px的列表",
+    "version": "1.0.0",
+    "author": "wangjing",
+    "contributors": [],
+    "spriteDeps": ["common"],
+    "widgetDeps": ["gallery/book_list_pic108","title/main"],
+    "jsDeps": ["libs/jQuery.js"],
+    "cssDeps": ["less/bootstrap.less"]
+}

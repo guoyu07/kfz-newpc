@@ -1,0 +1,19 @@
+{
+    "name": "module-example",
+    "type": "project",
+    "description": "example of module",
+    "keywords": ["module", "example"],
+    "authors": [
+        {
+            "name": "dongnan",
+            "email": "dongnan@kongfz.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "dongnan/linkcache": "^1.0.1",
+        "catfan/Medoo": "^1.1",
+        "leafo/lessphp": "~0.4.0",
+        "erusev/parsedown":"^1.6.1"
+    }
+}

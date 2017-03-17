@@ -1,0 +1,42 @@
+/*引入公共变量*/
+@import "src/less/variables.less";
+@booklist-font-size: 12px;
+@booklist-lineheigh: 20px;
+@book-list-a-color: #333;
+@book-list-a-hover-color: #8c222c;
+@book-list-shopinfo:#999;
+@book-list-price:#bf7f5f;
+@look-more-a:#0057a0;
+@look-more-a-hover:#8c222c;
+
+.book_list_108 {
+        width:  790px;
+        overflow: hidden;        
+        ul{ margin-right: -62.5px;}
+        li{ position: relative; float: left; width:108px; height: 250px; overflow: hidden; margin-right: 62.5px; margin-bottom: 45px; line-height:@booklist-lineheigh; word-break:break-all; }
+        li .pic a{ display: block;width:108px; height: 160px;text-align: center;}
+        li .pic a img{ max-width: 108px;max-height: 160px;}
+        li .text_height{ height: 62px; overflow: hidden;}
+        li .book_name{ font-size:@booklist-font-size; max-height: 40px; overflow: hidden; margin-top: 5px; }
+        li .book_name a{ color: @book-list-a-color;}
+        li .book_name a:hover{ color: @book-list-a-hover-color;}
+        li .shop_info{color:@book-list-shopinfo; height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        li .price_box{ position: absolute; font-size:12px; color: #bbb; left:0; bottom: 0; margin-top: 5px; height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        li .price_box .price{ color: @book-list-price; font-size:16px; }
+       .look_more a{ color: @look-more-a;}
+       .look_more a:hover{ color: @look-more-a-hover;}
+    @media screen and (min-width: 1200px){
+         width:990px;
+         ul{ margin-right: -68.4px;}
+         li{  margin-right: 68.4px; }
+	};
+    }
+
+
+
+
+
+
+
+
+

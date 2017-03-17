@@ -1,0 +1,5 @@
+{
+  "author": "zhaoxuan",
+  "jsDeps": ["libs/jQuery.js"],
+  "cssDeps": ["less/bootstrap.less"]
+}

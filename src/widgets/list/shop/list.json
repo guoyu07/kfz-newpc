@@ -1,0 +1,16 @@
+{
+  "name": "list/shop",
+  "type": "widget",
+  "description": "书店推荐",
+  "version": "1.0.0",
+  "author": "zhaoxuan",
+  "contributors": [
+    {
+      "name": "lichenglong",
+      "email": "lichenglong@kongfz.com"
+    }
+  ],
+  "widgetDeps": [],
+  "jsDeps": ["libs/jQuery.js"],
+  "cssDeps": ["less/bootstrap.less"]
+}

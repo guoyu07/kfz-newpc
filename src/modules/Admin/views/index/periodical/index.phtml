@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运营后台</title>
+    <!-- build:head-css -->
+    <!-- endbuild -->
+</head>
+<body>
+    <script>
+        var moduleId = <?=$moduleId?>;
+        //站点配置
+        var site = <?= json_encode($site)?>;
+    </script>
+<div id="wrapper">
+    <!-- Navigation -->
+    <?php include APP_PATH . '/application/modules/Admin/views/common/nav.phtml'?>
+
+</div>
+<div id="page-wrapper">
+    <div class="sub-nav">
+        <label>位置：</label>
+        <span>民国书刊－拍主池子</span>
+        <a class="sub-nav-line" href="/#moduleId_<?=$parentId?>" target="_blank">去看看线上样式</a>
+        <a class="sub-nav-show btn btn-primary" href="">预览</a>
+    </div>
+    <div class="periodical-box">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="javascript:;">拍主池子</a></li>
+            <li role="presentation"><a href="/admin/index/periodicalAuction">主栏拍品池子</a></li>
+            <li role="presentation"><a href="/admin/index/periodicalRpond">右侧书店池子</a></li>
+            <li role="presentation"><a href="/admin/index/periodicalModule">模块设置</a></li>
+        </ul>
+        <!-- 表格工具栏 -->
+        <div id="toolbar" style="display:none;">
+            <div style="padding: 10px;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="app.addItem()">新增</a>
+                <span style="margin-left:20px;">搜索：</span>
+                <input id="searchbox" class="easyui-searchbox" data-options="prompt:'Please Input Value',searcher:app.search" style="width:160px">
+            </div>
+            
+        </div>
+        <!-- 表格 -->  
+        <table id="table" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+    </div>
+</div>
+<!--新增-->
+<div id="win-add" class="easyui-window" title="添加/编辑拍主" data-options="modal:true,shadow:false,collapsible:false,minimizable:false,maximizable:false,resizable:false" style="display:none; width:700px;" closed="true">
+    <form id="form-add" class="form-horizontal">
+        <div class="item-box clearfix">
+            <div class="text-box">拍主昵称：</div>
+            <div class="input-box" style="width:300px;">
+                <input type="text" class="form-control" id="nickName" name="nickName" placeholder="拍主昵称">
+            </div>
+            <div class="btn btn-default" style="margin-left: 20px;" onclick="app.getAuctionInfo()">查询</div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">拍主信息参考：</div>
+            <div class="input-box" style="width:300px;">
+                <table id="table-auction-info" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">发布时间设置：</div>
+            <div class="input-box">
+                <input id="start-time-type" name="startTimeType" class="easyui-combobox">
+            </div>
+            <div class="input-box" style="margin-left: 20px;">
+                <input id="start-datetimebox" name="startTime" class="easyui-datetimebox" style="width:150px;" disabled="true">
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">结束时间设置：</div>
+            <div class="input-box">
+                <input id="end-time-type" name="endTimeType" class="easyui-combobox">
+            </div>
+            <div class="input-box" style="margin-left: 20px;">
+                <input id="end-datetimebox" name="endTime" class="easyui-datetimebox" style="width:150px;" disabled="true">
+            </div>
+        </div>
+        <div class="item-box clearfix">
+            <div class="text-box">排序：</div>
+            <div class="input-box">
+                 <input id="order" name="order" class="easyui-numberspinner" value="1" data-options="min:1" >
+            </div>
+        </div>
+        <div class="buttons clearfix" style="width: 200px;">
+            <input type="submit" class="btn btn-default pull-left" value="保存">
+            <div class="btn btn-default pull-right" style="margin-left: 20px;" onclick="app.closeAddWin()">放弃</div>
+        </div>
+    </form>
+</div>
+<!--排序框-->
+<div id="win-order" class="easyui-window" title="修改排序" data-options="modal:true,shadow:false,collapsible:false,minimizable:false,maximizable:false,resizable:false" style="display:none;width:300px;height:150px;padding:5px;" closed="true">
+        <div data-options="region:'center'" style="padding:10px;">
+        <div style="margin:10px 0;">
+            <label>排序：</label><input id="select-order" class="easyui-numberspinner" value="1" data-options="min:1" style="width:150px;">
+        </div>
+        <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
+            <a id="editOrderBtn" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="app.selectOrder()" style="width:80px">Ok</a>
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="app.closeOrderWin()" style="width:80px">Cancel</a>
+        </div>
+    </div>
+</div>       
+<!-- build:footer-js -->
+<!-- endbuild -->
+</body>
+</html>

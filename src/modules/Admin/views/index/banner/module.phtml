@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运营后台</title>
+    <!-- build:head-css -->
+    <!-- endbuild -->
+</head>
+<body>
+<input type="hidden" id="moduleId" value="<?=$moduleId?>">
+<div id="wrapper">
+    <!-- Navigation -->
+    <?php include APP_PATH . '/application/modules/Admin/views/common/nav.phtml'?>
+</div>
+<div id="page-wrapper">
+    <div class="sub-nav">
+        <label>位置：</label>
+        <span>首页－轮播图</span>
+        <a class="sub-nav-line" href="">去看看线上样式</a>
+        <a class="sub-nav-show btn btn-primary" href="">预览</a>
+    </div>
+    <div class="banner-box">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="/admin/index/bannerIndex">轮播图池子</a></li>
+            <li role="presentation" class="active"><a href="javascript:;">模块设置</a></li>
+        </ul>
+
+        <ul class="nav nav-pills nav-justified" id="navPill-tab" role="tablist">
+            <li role="presentation" class="active"><a href="#tab=0">默认图</a></li>
+            <li role="presentation"><a href="#tab=1">报警邮件接收</a></li>
+            <li role="presentation"><a href="#tab=2">报警短信接收</a></li>
+            <li role="presentation"><a href="#tab=3">数据日报接收</a></li>
+        </ul>
+        <ul class="tab-box clearfix">
+           <li class="show">
+                <table id="tt" title="" class="easyui-datagrid" style="width:100%;height:auto;"></table>
+                <!--表格工具栏-->
+                <div style="display:none;" id="toolbar">
+                    <div style="padding: 10px;">
+                        <div class="toolList"><a style="margin-top:-3px;margin-left:2px;" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="module.addData()">新增</a></div>
+                    </div>
+                </div>
+                <!--新增-->
+                <div id="dlg" class="easyui-window" title="新增" data-options="modal:true,shadow:false" style="display:none;width:800px" closed="true">
+                    <div class="clearfix" style="margin:0 50px;margin-top:10px;padding-bottom:10px;border-bottom:1px solid #ccc">
+                        <div class="pull-left" style="width: 50%">
+                            <!--dom结构部分-->
+                            <div id="uploader-demo">
+                                <!--用来存放item-->
+                                <div id="fileList" class="uploader-list"></div>
+                                <div id="filePicker"></div>
+                            </div>
+                        </div>
+                        <div class="pull-right" style="width: 50%;">
+                            <div class="input-group" style="margin-top:10px;">
+                                <input id="searchName" type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick="module.linkSearch()">抓取图片!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="fm" style="margin:0;padding:20px 50px 10px">
+                        <div class="dlg-img-box clearfix">
+                            <div class="dlg-img-box-left">
+                                <div class="dlg-wrapper">
+                                    <img id="element_id" src="">
+                                    <div id="loading-center-absolute">
+                                        <div class="object" id="object_one"></div>
+                                        <div class="object" id="object_two"></div>
+                                        <div class="object" id="object_three"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dlg-img-box-right">
+                                <div class="dlg-wrapper-small">
+                                    <img class="jcrop-preview" src="" alt="Preview">
+                                </div>
+                                <div id="dlg-tailor" class="btn btn-info" style="margin-top:24px;">裁剪</div>
+                            </div>
+                        </div>
+                        <div class="dlg-color-box">
+                            <label>背景色值：</label>
+                            <input type="text" name="bgcolor" class="dlg-color-input" style="width:100px;line-height:20px;border:1px solid #ccc">
+                            <span class="dlg-color-bg"></span>
+                            <input type="color" class="dlg-color-choose">
+                        </div>
+                        <div class="dlg-link-box">
+                            <label>点击图片跳转到：</label>
+                            <input id="linkurl" type="text" onkeyup="module.linkurl()" name="linkurl" style="width:200px;line-height:20px;border:1px solid #ccc"><br/>
+                            <label>点击这里验证跳转 ：</label><a target='_blank' href="javascript:;"></a>
+                        </div>
+                        <div class="dlg-address-box">
+                            <label>图文轮播－文本：</label>
+                            <input type="text" id="description" name="description" style="width:200px;line-height:20px;border:1px solid #ccc"><br/>
+                            <span>前台最多可显示前11个字</span>
+                        </div>
+                        <div class="dlg-default">
+                            <label>排序：</label>
+                            <input id="order" class="easyui-numberspinner" value="1" data-options="min:1" style="width:100px;">
+                        </div>
+                        <div id="dlg-buttons">
+                            <input type="submit" class="easyui-linkbutton" style="width:90px;height: 26px;" value="保存">
+                            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="module.cancle()" style="width:90px">取消</a>
+                        </div>
+                    </form>
+                </div>
+           </li>
+           <li>1</li>
+           <li>2</li>
+           <li>3</li>
+        </ul>
+    </div>
+</div>
+<!-- build:footer-js -->
+<!-- endbuild -->
+</body>
+</html>

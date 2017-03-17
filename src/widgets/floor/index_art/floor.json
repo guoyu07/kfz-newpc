@@ -1,0 +1,16 @@
+{
+    "name": "floor/index_art",
+    "type": "widget",
+    "description": "艺术品",
+    "version": "0.0.1",
+    "author": "lichenglong",
+    "contributors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "widgetDeps": ["list/art","gallery/lot"],
+    "jsDeps": [],
+    "cssDeps": ["less/bootstrap.less"]
+}
